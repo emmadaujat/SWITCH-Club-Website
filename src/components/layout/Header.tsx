@@ -60,7 +60,7 @@ export default function Header() {
         {/* Social Icons as links (discord, instagram, email, rubric) */}
         <div className="hidden items-center md:flex">
           <div className=" justify-end flex">
-            <Link href={"https://linktr.ee/switchrmit"}>
+            <Link href={"https://campus.hellorubric.com/?s=10199"}>
               <button className="uppercase bg-brand-purple hover:bg-white hover:text-brand-purple text-white font-bold rounded-lg text-sm border-2 border-black p-2 shadow-[4px_4px_0px_#000] transition">
                 JOIN SWITCH <span> ★</span>
               </button>
