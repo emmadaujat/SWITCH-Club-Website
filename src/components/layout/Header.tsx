@@ -1,3 +1,6 @@
+import ChunkyButton from "../ui/ChunkyButton";
+import Link from "next/link";
+
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md">
@@ -55,13 +58,17 @@ export default function Header() {
 
         {/* TODO: */}
         {/* Social Icons as links (discord, instagram, email, rubric) */}
-        <div className="hidden items-center gap-4 md:flex">
-          <button className="text-sm font-medium text-gray-600 hover:text-gray-900">Sign In</button>
-          <button className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700">
-            Get Started
-          </button>
+        <div className="hidden items-center md:flex">
+          <div className=" justify-end flex">
+            <Link href={"https://linktr.ee/switchrmit"}>
+              <button className="uppercase bg-brand-purple hover:bg-white hover:text-brand-purple text-white font-bold rounded-lg text-sm border-2 border-black p-2 shadow-[4px_4px_0px_#000] transition">
+                JOIN SWITCH <span> ★</span>
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
+
       <div className="bg-brand-purple-dark ">
         <p className="font-regular text-sm text-white p-6">
           <span className="text-brand-pink p-4">★</span>
