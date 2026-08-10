@@ -95,14 +95,13 @@ export default function Home() {
                 </div>
 
                 {/* UPCOMING EVENT - BODY TEXT */}
-                <div>
-                  <p className="p-2 font-bold text-2xl text-black">Welcome Night with Fire+</p>
-                  <span className="p-4 font-regular text-l text-black">
-                    📅 30th July 2026 <p>📍 Carlton Club Hotel </p>
-                    <p className="font-semibold mt-2 text-md">
-                      Come have fun with us as we welcome semester 2
-                    </p>
-                  </span>
+                <div className="p-2">
+                  <p className="font-bold text-2xl ">Welcome Night with Fire+</p>
+                  <p>📅 30th July 2026</p>
+                  <p> 📍 Carlton Club Hotel </p>
+                  <p className="font-semibold mt-2 text-md">
+                    Come have fun with us as we welcome semester 2
+                  </p>
                 </div>
 
                 {/* BUTTON */}
