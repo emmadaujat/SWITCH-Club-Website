@@ -1,4 +1,6 @@
 import Image from "next/image";
+import TiltedCard from "@/components/ui/TiltedCard";
+import ChunkyButton from "@/components/ui/ChunkyButton";
 
 export default function Home() {
   return (
@@ -25,13 +27,15 @@ export default function Home() {
           </div>
 
           {/* BUTTONS */}
+
           <div className="mt-30 flex gap-6">
-            <button className="bg-brand-purple hover:bg-white hover:text-brand-purple hover:p-5 text-white font-bold rounded-lg border-2 border-black p-4 shadow-[4px_4px_0px_#000] transition">
-              JOIN THE CLUB<span> ★</span>
-            </button>
-            <button className="bg-white hover:bg-brand-purple hover:text-white hover:p-5 text-brand-purple font-bold rounded-lg border-2 border-black p-4 shadow-[4px_4px_0px_#000] transition">
-              SEE EVENTS <span> →</span>
-            </button>
+            {/* Navigation */}
+            <ChunkyButton variant="primary" trailingSymbol="★" href="/how-to-join">
+              JOIN THE CLUB
+            </ChunkyButton>
+            <ChunkyButton variant="secondary" trailingSymbol="→" href="/events">
+              SEE EVENTS
+            </ChunkyButton>
           </div>
         </div>
 
@@ -49,64 +53,80 @@ export default function Home() {
 
       {/* MIDDLE SECTION: OUR MISSION */}
       <div className=" bg-brand-purple p-10">
-        {/* OUR MISSION - background card */}
-        <div className=" mx-auto max-w-xl  rotate-2 rounded-md border-2 border-black bg-brand-cream p-4 shadow-[4px_4px_0px_#000]">
-          {/* OUR MISSION - Heading */}
-          <div className="p-2 mt-5 flex rotate-4 ">
-            <div className="rounded-full border-2 border-black bg-brand-pink p-2">
-              <p className="font-bold uppercase text-xl text-black">our mission</p>
+        {/* Layout wrapper — width/centering stays here */}
+        <div className="mx-auto max-w-xl">
+          <TiltedCard rotation={2} bgColor="bg-brand-cream">
+            {/* OUR MISSION - Heading */}
+            <div className="p-2 mt-5 flex rotate-4 ">
+              <div className="rounded-full border-2 border-black bg-brand-pink p-2">
+                <p className="font-bold uppercase text-xl text-black">our mission</p>
+              </div>
             </div>
-          </div>
-          {/* OUR MISSION - BODY TEXT */}
-          <p className="p-2 font-bold text-lg text-black">
-            “We're building a community where women and underrepresented people in tech can learn,
-            connect, and thrive together.”
-          </p>
-          {/* BUTTONS */}
-          <div className=" mt-6 justify-end flex">
-            <button className="uppercase bg-white hover:bg-brand-purple hover:text-white text-black font-bold rounded-lg text-sm border-2 border-black p-2 shadow-[4px_4px_0px_#000] transition">
-              Read our story <span> →</span>
-            </button>
-          </div>
+
+            {/* OUR MISSION - BODY TEXT */}
+            <p className="p-2 font-bold text-lg text-black">
+              “We're building a community where women and underrepresented people in tech can learn,
+              connect, and thrive together.”
+            </p>
+
+            {/* BUTTONS */}
+            <div className=" mt-6 justify-end flex">
+              <ChunkyButton variant="other" trailingSymbol="→" href="/who-are-we">
+                Read our story
+              </ChunkyButton>
+            </div>
+          </TiltedCard>
         </div>
       </div>
 
       {/* BOTTOM SECTION: UPCOMING EVENT */}
       <div className=" bg-brand-purple-LIGHT p-10">
-        {/* UPCOMING EVENT - background card */}
-        <div className=" mx-auto max-w-7xl rotate-[-2deg] px-10 py-1 grid grid-cols-1 md:grid-cols-2 items-center rounded-md border-2 border-black bg-brand-lime p-4 shadow-[4px_4px_0px_#000]">
-          {/* LEFT: heading + body + button, grouped together */}
-          <div className="flex flex-col">
-            {/* UPCOMING EVENT - Heading */}
-            <div className="rounded-full border-2 border-black bg-white p-2 rotate-2 self-start ">
-              <p className="font-bold uppercase text-xl text-black">upcoming event 🚨</p>
-            </div>
+        <div className="mx-auto max-w-4xl">
+          <TiltedCard rotation={2} bgColor="bg-brand-lime">
+            {/* Two-column split now lives INSIDE the card */}
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+              {/* LEFT: heading + body + button, grouped together */}
+              <div className="flex flex-col">
+                <div className="p-2 mt-5 flex rotate-4">
+                  {/* UPCOMING EVENT - Heading */}
+                  <div className="rounded-full border-2 border-black bg-white p-2 rotate-2 self-start ">
+                    <p className="font-bold uppercase text-xl text-black">upcoming event 🚨</p>
+                  </div>
+                </div>
 
-            {/* UPCOMING EVENT - BODY TEXT */}
-            <p className="p-2 font-bold text-2xl text-black">Welcome Night with Fire+</p>
-            <p className="p-4 font-regular text-l text-black">
-              📅 30th July 2026 · 📍 Carlton Club Hotel ·{" "}
-              <p className="font-semibold mt-2">Come have fun with us as we welcome semester 2.</p>
-            </p>
+                {/* UPCOMING EVENT - BODY TEXT */}
+                <div>
+                  <p className="p-2 font-bold text-2xl text-black">Welcome Night with Fire+</p>
+                  <span className="p-4 font-regular text-l text-black">
+                    📅 30th July 2026 <p>📍 Carlton Club Hotel </p>
+                    <p className="font-semibold mt-2 text-md">
+                      Come have fun with us as we welcome semester 2
+                    </p>
+                  </span>
+                </div>
 
-            {/* BUTTON */}
-            <div className=" p-4 justify-start flex">
-              <button className="uppercase bg-brand-purple hover:bg-brand-purple hover:text-white text-white font-bold rounded-lg text-sm border-2 border-black p-2 shadow-[4px_4px_0px_#000] transition">
-                buy a ticket now <span> →</span>
-              </button>
-            </div>
-          </div>
+                {/* BUTTON */}
+                <div className=" p-4 justify-start flex">
+                  <ChunkyButton
+                    variant="primary"
+                    trailingSymbol="→"
+                    href="https://campus.hellorubric.com/?s=10199"
+                  >
+                    buy a ticket now
+                  </ChunkyButton>
+                </div>
+              </div>
 
-          {/* RIGHT: photo placeholder */}
-          <div className="m-4 rounded-lg flex items-center justify-center">
-            <div>
-              <img
-                className="h-70 w-auto "
-                alt="switch-team-welcome-night-sem1-2026"
-                src="/welcome-night-sem1-2026.JPG"
-              ></img>
+              {/* RIGHT: photo placeholder */}
+              <div className="m-4 rounded-lg flex items-center justify-center">
+                <img
+                  className="h-70 w-auto "
+                  alt="switch-team-welcome-night-sem1-2026"
+                  src="/welcome-night-sem1-2026.JPG"
+                />
+              </div>
             </div>
-          </div>
+          </TiltedCard>
         </div>
       </div>
     </div>

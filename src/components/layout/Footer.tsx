@@ -21,10 +21,10 @@ export default function Footer() {
                 <span className="text-brand-pink">★</span> SWITCH{" "}
                 <span className="text-brand-pink">★</span>
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-brand-light">
-                Society for women and gender diverse students in technology
+              <div className="mt-3 text-sm leading-relaxed text-brand-light">
+                <p>Society for women and gender diverse students in technology</p>
                 <p>@ RMIT University</p>
-              </p>
+              </div>
             </div>
 
             {/* Explore */}
