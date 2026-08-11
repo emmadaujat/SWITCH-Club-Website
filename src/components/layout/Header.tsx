@@ -1,5 +1,6 @@
 import ChunkyButton from "../ui/ChunkyButton";
 import Link from "next/link";
+import Ticker from "../ui/Ticker";
 
 export default function Header() {
   return (
@@ -56,7 +57,6 @@ export default function Header() {
           </a>
         </nav>
 
-        {/* TODO: */}
         {/* Social Icons as links (discord, instagram, email, rubric) */}
         <div className="hidden items-center md:flex">
           <div className=" justify-end flex">
@@ -69,22 +69,11 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="bg-brand-purple-dark ">
-        <p className="font-regular text-sm text-white p-6">
-          <span className="text-brand-pink p-4">★</span>
-          SAFE SPACE FOR WOMEN IN TECH
-          <span className="text-brand-lime p-4">★</span>
-          JOIN THE MOVEMENT
-          <span className="text-brand-pink p-4">★</span>
-          SAFE SPACE FOR WOMEN IN TECH
-          <span className="text-brand-lime p-4">★</span>
-          JOIN THE MOVEMENT
-          <span className="text-brand-pink p-4">★</span>
-          SAFE SPACE FOR WOMEN IN TECH
-          <span className="text-brand-lime p-4">★</span>
-          JOIN THE MOVEME
-        </p>
-      </div>
+      <Ticker
+        phrases={["SAFE SPACE FOR WOMEN IN TECH", "JOIN THE MOVEMENT"]}
+        bgColor="bg-brand-purple-dark"
+        textColor="text-white"
+      />
     </header>
   );
 }
