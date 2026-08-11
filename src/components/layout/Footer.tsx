@@ -21,10 +21,10 @@ export default function Footer() {
                 <span className="text-brand-pink">★</span> SWITCH{" "}
                 <span className="text-brand-pink">★</span>
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-brand-light">
-                Society for women and gender diverse students in technology
+              <div className="mt-3 text-sm leading-relaxed text-brand-light">
+                <p>Society for women and gender diverse students in technology</p>
                 <p>@ RMIT University</p>
-              </p>
+              </div>
             </div>
 
             {/* Explore */}
@@ -96,7 +96,7 @@ export default function Footer() {
               <ul className="p-3 flex gap-2">
                 {/* TODO: put links to socials */}
                 <li>
-                  <a href="#">
+                  <a href="https://www.linkedin.com/in/rmit-switch-admin-60b26b197/">
                     <img
                       className="h-7 w-auto object-contain"
                       src="/linkedin.png"
@@ -105,7 +105,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="https://www.instagram.com/rmitswitch/">
                     <img
                       className="h-7 w-auto object-contain"
                       src="/instagram.png"
@@ -114,7 +114,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="https://discord.com/invite/K3qDPGx9Xs">
                     <img
                       className="h-7 w-auto object-contain"
                       src="/discord.png"
