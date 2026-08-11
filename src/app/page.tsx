@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className=" bg-brand-light">
       {/* TOP SECTION */}
-      <div className="mx-auto max-w-7xl px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="mx-auto max-w-7xl py-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* TOP LEFT: text + buttons */}
         <div className=" items-center text-center flex flex-col">
           <h1 className=" text-6xl md:text-8xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:6px_black] [paint-order:stroke_fill]">
@@ -27,7 +27,6 @@ export default function Home() {
           </div>
 
           {/* BUTTONS */}
-
           <div className="mt-30 flex gap-6">
             {/* Navigation */}
             <ChunkyButton variant="primary" trailingSymbol="★" href="/how-to-join">
@@ -39,14 +38,48 @@ export default function Home() {
           </div>
         </div>
 
-        {/* TOP RIGHT: photo cluster placeholder */}
-        <div className="max-w-7xl mx-auto">
-          <div className="rounded-lg border-2 border-black bg-brand-pink justify-end p-3">
+        {/* TOP RIGHT */}
+        <div>
+          <div className="ml-auto w-fit rounded-lg border-2 border-black bg-brand-pink p-3">
             <p className="text-black text-xl font-bold"> Current Members: 350</p>
           </div>
 
-          <div className="relative h-[420px] bg-brand-purple/10 rounded-lg border-2 border-dashed border-brand-purple/30 flex items-center justify-center">
-            <p className="text-brand-purple-dark/50 text-sm">photo cluster goes here</p>
+          <div className="relative h-[520px] mx-auto ">
+            {/* TOP RIGHT: photo polaroid 1 */}
+            <div className="absolute top-0 right-70 w-80">
+              <TiltedCard rotation={-5} bgColor="bg-white">
+                <img
+                  src="/pics/team-bonding-sem12026.jpg"
+                  alt="the switch crew"
+                  className="w-80 h-46 object-cover"
+                />
+                <p className="pt-2 font-semibold text-sm">the switch crew ✨</p>
+              </TiltedCard>
+            </div>
+
+            {/* TOP RIGHT: photo polaroid 2 */}
+            <div className="absolute top-10 right-0 w-80">
+              <TiltedCard rotation={10} bgColor="bg-white">
+                <img
+                  src="/pics/notion-workshop-sem12026.jpg"
+                  alt="workshop vibes"
+                  className="w-80 h-46 object-cover"
+                />
+                <p className="pt-2 font-semibold text-sm">workshop vibes 💻</p>
+              </TiltedCard>
+            </div>
+
+            {/* TOP RIGHT: photo polaroid 3 */}
+            <div className="absolute top-64 right-60 w-80">
+              <TiltedCard rotation={4} bgColor="bg-white">
+                <img
+                  src="/pics/interuni-sem12026.jpg"
+                  alt="Inter-Uni Industry Networking 2026"
+                  className="w-80 h-46 object-cover"
+                />
+                <p className="pt-2 font-semibold text-sm">Inter-Uni Industry Networking 2026</p>
+              </TiltedCard>
+            </div>
           </div>
         </div>
       </div>

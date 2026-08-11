@@ -23,7 +23,7 @@ export default function Ticker({
     <div className={`${bgColor} w-full overflow-hidden whitespace-nowrap`}>
       {/* INNER: the thing that actually animates */}
       <div className="inline-flex" style={{ animation: `marquee ${duration}s linear infinite` }}>
-        {/* Copy 1 */}
+        {/* Copy 1 - every other star is pink or lime green*/}
         <div className="flex-shrink-0 inline-flex items-center">
           {repeatedPhrases.map((phrase, i) => (
             <span key={`a-${i}`} className={`${textColor} font-semi-bold uppercase py-4`}>
@@ -35,7 +35,7 @@ export default function Ticker({
           ))}
         </div>
 
-        {/* Copy 2 — identical, makes the loop seamless */}
+        {/* Copy 2 — every other star is pink or lime green */}
         <div className="flex-shrink-0 inline-flex items-center" aria-hidden="true">
           {repeatedPhrases.map((phrase, i) => (
             <span key={`b-${i}`} className={`${textColor} font-semi-bold uppercase py-4`}>
