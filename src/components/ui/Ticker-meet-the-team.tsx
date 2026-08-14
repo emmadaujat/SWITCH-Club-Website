@@ -15,7 +15,7 @@ export default function Ticker({
   const repeatedPhrases = Array(repeatCount).fill(phrases).flat();
 
   // Seconds per repeat — this is your actual "speed" dial now, not the animate class
-  const secondsPerRepeat = 6;
+  const secondsPerRepeat = 9;
   const duration = repeatCount * secondsPerRepeat;
 
   return (
@@ -27,10 +27,7 @@ export default function Ticker({
         <div className="flex-shrink-0 inline-flex items-center">
           {repeatedPhrases.map((phrase, i) => (
             <span key={`a-${i}`} className={`${textColor} font-semibold uppercase py-4`}>
-              <span className={`p-4 ${i % 2 === 0 ? "text-brand-pink" : "text-brand-lime"}`}>
-                ★
-              </span>{" "}
-              {phrase}
+              <span className={"p-4 text-brand-pink"}>★</span> {phrase}
             </span>
           ))}
         </div>
@@ -39,10 +36,7 @@ export default function Ticker({
         <div className="flex-shrink-0 inline-flex items-center" aria-hidden="true">
           {repeatedPhrases.map((phrase, i) => (
             <span key={`b-${i}`} className={`${textColor} font-semibold uppercase py-4`}>
-              <span className={`p-4 ${i % 2 === 0 ? "text-brand-pink" : "text-brand-lime"}`}>
-                ★
-              </span>{" "}
-              {phrase}
+              <span className={"p-4 text-brand-pink"}>★</span> {phrase}
             </span>
           ))}
         </div>

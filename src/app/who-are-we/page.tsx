@@ -98,7 +98,7 @@ export default function WhoWeArePage() {
       </div>
 
       {/* BOTTOM SECTION: OUR GOALS */}
-      <div className=" bg-brand-light-purple p-20">
+      <div className="p-20">
         <div className="relative mx-auto max-w-2xl">
           <TiltedCard rotation={1} bgColor="bg-brand-purple">
             {/* BOTTOM SECTION: STICKY TAPE */}
