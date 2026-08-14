@@ -207,7 +207,7 @@ export default function Home() {
                 <img
                   className="h-70 w-auto "
                   alt="switch-team-welcome-night-sem1-2026"
-                  src="/welcome-night-sem1-2026.JPG"
+                  src="/pics/welcome-night-sem1-2026.JPG"
                 />
               </div>
             </div>
