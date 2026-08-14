@@ -19,7 +19,7 @@ export default function MeetTheTeamPage() {
       </div>
 
       {/* SECTION 1: EXECUTIVE COMMITTEE */}
-      <div className="bg-brand-purple px-10 py-20">
+      <div className="bg-brand-purple px-10 pt-10 pb-20">
         {/* HEADING */}
         <div className="mb-10 flex flex-col items-center">
           <div className="rounded-full border-2 border-black bg-brand-pink px-6">
