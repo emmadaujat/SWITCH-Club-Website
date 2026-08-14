@@ -94,7 +94,6 @@ export default function Footer() {
                 <span className="text-brand-pink">★</span>
               </h3>
               <ul className="p-3 flex gap-2">
-                {/* TODO: put links to socials */}
                 <li>
                   <a href="https://www.linkedin.com/in/rmit-switch-admin-60b26b197/">
                     <img
