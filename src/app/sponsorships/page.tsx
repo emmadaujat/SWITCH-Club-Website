@@ -4,9 +4,10 @@ import { TeamMember } from "@/components/ui/TeamMemberCard";
 import TeamMemberGrid from "@/components/ui/TeamMemberGrid";
 
 // ---------------- HARDCODED DATA ----------------
+// TODO: get sponsor logos
 const SPONSORS: TeamMember[] = [
-  { name: "Sponsor 1", role: "Sponsor", image: "/pics/team-bonding-sem12026.jpg", rotation: 5 },
-  { name: "Sponsor 2", role: "Sponsor", image: "/pics/team-bonding-sem12026.jpg", rotation: -5 },
+  { name: "Jane Street", role: "Sponsor", image: "/pics/team-bonding-sem12026.jpg", rotation: 5 },
+  { name: "auDA", role: "Sponsor", image: "/pics/team-bonding-sem12026.jpg", rotation: -5 },
   { name: "Sponsor 3", role: "Sponsor", image: "/pics/team-bonding-sem12026.jpg", rotation: 6 },
   { name: "Sponsor 4", role: "Sponsor", image: "/pics/team-bonding-sem12026.jpg", rotation: -6 },
 ];
@@ -44,6 +45,7 @@ export default function SponsorshipsPage() {
             </ul>
 
             {/* BUTTON */}
+            {/* TODO: update link for get in touch -- go to contact us page? */}
             <div className=" m-5 justify-end flex">
               <ChunkyButton
                 variant="other"
@@ -76,6 +78,8 @@ export default function SponsorshipsPage() {
               <li>Next Next item</li>
             </ul>
             {/* BUTTON */}
+            {/* TODO: update link for get in touch -- go to contact us page? */}
+            {/* TODO: add downloadable pdf of sponsor doc */}
             <div className=" m-5 justify-end flex">
               <ChunkyButton
                 variant="other"
@@ -108,6 +112,7 @@ export default function SponsorshipsPage() {
             </ul>
 
             {/* BUTTON */}
+            {/* TODO: update link for get in touch -- go to contact us page? */}
             <div className=" m-5 justify-end flex">
               <ChunkyButton
                 variant="other"
