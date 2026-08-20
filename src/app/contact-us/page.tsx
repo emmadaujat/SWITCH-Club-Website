@@ -69,10 +69,18 @@ export default function ContactUsPage() {
                 <p className="font-bold uppercase text-xl text-black">Our Contact Details</p>
               </div>
             </div>
-            <ul className="list-disc  mt-2 px-2 ">
-              <ul>switch@rmit.com</ul>
-              <ul>insta: @switchrmit</ul>
-              <ul>linkedin: @switchrmit</ul>
+            <ul className="list-disc ">
+              <ul className="p-1">
+                <span className="font-semibold">Email: </span>
+                switch@rmit.com
+              </ul>
+              <ul className="p-1">
+                {" "}
+                <span className="font-semibold">Insta:</span> @switchrmit
+              </ul>
+              <ul className="p-1">
+                <span className="font-semibold">Linkedin: </span>@switchrmit
+              </ul>
             </ul>
           </TiltedCard>
         </div>
