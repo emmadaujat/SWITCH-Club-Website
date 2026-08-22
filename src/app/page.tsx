@@ -39,6 +39,7 @@ export default function Home() {
             <div className="absolute -top-12 right-86 text-brand-purple text-4xl">★</div>
             <div className="absolute -top-2 right-92 text-brand-purple text-2xl">★</div>
 
+            {/* TODO: make all links open in seperate tab */}
             <ChunkyButton variant="primary" trailingSymbol="★" href="/how-to-join">
               JOIN THE CLUB
             </ChunkyButton>
@@ -151,6 +152,7 @@ export default function Home() {
             </p>
 
             {/* BUTTONS */}
+            {/* TODO: make all links open in seperate tab */}
             <div className=" mt-6 justify-end flex">
               <ChunkyButton variant="other" trailingSymbol="→" href="/who-are-we">
                 Read our story
@@ -191,6 +193,8 @@ export default function Home() {
                 </div>
 
                 {/* BUTTON */}
+                {/* TODO: make all links open in seperate tab */}
+
                 <div className=" p-4 justify-start flex">
                   <ChunkyButton
                     variant="primary"

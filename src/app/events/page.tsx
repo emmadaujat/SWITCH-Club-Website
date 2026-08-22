@@ -132,6 +132,7 @@ export default function EventsPage() {
                   <p>📍 {event.location}</p>
                 </div>
                 <div className="m-5 justify-start flex">
+                  {/* TODO: make all links open in seperate tab */}
                   <ChunkyButton variant="primary" trailingSymbol="→" href="/how-to-join">
                     RSVP Now!
                   </ChunkyButton>
@@ -145,6 +146,7 @@ export default function EventsPage() {
                 <p className="text-sm">{event.date}</p>
                 <div className="m-5 justify-end flex">
                   {/* TODO: link events to instagram posts/ linkedin posts */}
+                  {/* TODO: make all links open in seperate tab */}
                   <ChunkyButton variant="other" trailingSymbol="→" href="/how-to-join">
                     View recap
                   </ChunkyButton>

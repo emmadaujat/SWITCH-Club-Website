@@ -28,6 +28,7 @@ export default function Footer() {
             </div>
 
             {/* Explore */}
+            {/* TODO: make all links open in seperate tab */}
             <div>
               <h3 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
                 <span className="text-brand-pink">★</span> Explore{" "}

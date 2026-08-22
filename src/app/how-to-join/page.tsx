@@ -30,6 +30,7 @@ export default function JoinTheClubPage() {
             <p>Fill out our quick membership form, it only takes 2 minutes!</p>
           </div>
           {/* BUTTON */}
+          {/* TODO: make all links open in seperate tab */}
           <div className=" m-5 justify-end flex">
             <ChunkyButton
               variant="primary"
@@ -53,6 +54,7 @@ export default function JoinTheClubPage() {
             <p>Get access to announcements, chats and event links</p>
           </div>
           {/* BUTTON */}
+          {/* TODO: make all links open in seperate tab */}
           <div className=" m-5 justify-end flex">
             <ChunkyButton
               variant="primary"
@@ -78,6 +80,8 @@ export default function JoinTheClubPage() {
             <p>Meet the team and community in person</p>
           </div>
           {/* BUTTON */}
+          {/* TODO: make all links open in seperate tab */}
+
           <div className=" m-5 justify-end flex">
             <ChunkyButton variant="other" trailingSymbol="→" href="/how-to-join">
               Join the club

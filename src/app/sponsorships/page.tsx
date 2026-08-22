@@ -3,6 +3,7 @@ import ChunkyButton from "@/components/ui/ChunkyButton";
 import { TeamMember } from "@/components/ui/TeamMemberCard";
 import TeamMemberGrid from "@/components/ui/TeamMemberGrid";
 
+// TODO: CREATE DATABASE & GET SPONSORSHIP INFORMATION
 // ---------------- HARDCODED DATA ----------------
 const SPONSORS: TeamMember[] = [
   { name: "Sponsor 1", role: "Sponsor", image: "/pics/team-bonding-sem12026.jpg", rotation: 5 },
@@ -44,6 +45,7 @@ export default function SponsorshipsPage() {
             </ul>
 
             {/* BUTTON */}
+            {/* TODO: make all links open in seperate tab */}
             <div className=" m-5 justify-end flex">
               <ChunkyButton
                 variant="other"
@@ -76,6 +78,7 @@ export default function SponsorshipsPage() {
               <li>Next Next item</li>
             </ul>
             {/* BUTTON */}
+            {/* TODO: make all links open in seperate tab */}
             <div className=" m-5 justify-end flex">
               <ChunkyButton
                 variant="other"
@@ -108,6 +111,7 @@ export default function SponsorshipsPage() {
             </ul>
 
             {/* BUTTON */}
+            {/* TODO: make all links open in seperate tab */}
             <div className=" m-5 justify-end flex">
               <ChunkyButton
                 variant="other"

@@ -5,6 +5,8 @@ import ChunkyButton from "@/components/ui/ChunkyButton";
 import UserForm from "@/components/ui/Form";
 import { useState } from "react";
 
+//TODO: MAKE A ROUTE FOR CONTACT FORM TO SEND TO SWITCH EMAIL
+
 interface FormData {
   fullName: string;
   email: string;
