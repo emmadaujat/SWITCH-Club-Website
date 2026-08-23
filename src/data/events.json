@@ -12,6 +12,6 @@
     { "id": "4", "name": "Semester 1 Team Bonding", "date": "14 April 2026", "image": "/pics/events/team-bonding-sem12026.jpg", "bgColor": "bg-white", "rotation": 1 },
     { "id": "7", "name": "Introduction to Leetcode", "date": "8 May 2026", "image": "/pics/events/intro-leetcode-sem12026.jpg", "bgColor": "bg-white", "rotation": -5 },
     { "id": "8", "name": "Paint & Sip", "date": "2 April 2026", "image": "/pics/events/paint-sip-sem12026.jpg", "bgColor": "bg-white", "rotation": -2 },
-    { "id": "9", "name": "Welcome Night - Sem 1 2026", "date": "12 March 2026", "image": "/pics/events/welcome-night-sem12026.JPG", "bgColor": "bg-white", "rotation": 3 }
+    { "id": "9", "name": "Welcome Night - Sem 1 2026", "date": "12 March 2026", "image": "/pics/events/welcome-night-sem12026.jpg", "bgColor": "bg-white", "rotation": 3 }
   ]
 }
