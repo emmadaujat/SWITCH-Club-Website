@@ -1,0 +1,17 @@
+{
+  "upcoming": [
+    { "id": "1", "type": "Social", "name": "Technology Ball w/ CSIT", "date": "22 Oct 2026", "location": "The Promonade, Docklands", "bgColor": "bg-brand-lime", "rotation": 3, "ticketUrl": "https://rubric.rmit.edu.au/switch" },
+    { "id": "2", "type": "Networking", "name": "STEM Collective Industry Night w/ CSIT", "date": "03 Sep Oct", "location": "RMIT Building 14", "bgColor": "bg-brand-pink", "rotation": -3, "ticketUrl": "https://rubric.rmit.edu.au/switch/" },
+    { "id": "3", "type": "Social", "name": "Bracelet Making Workshop", "date": "11 September 2026", "location": "RMIT Garden Building Lvl 6", "bgColor": "bg-brand-cream", "rotation": 4, "ticketUrl": "https://rubric.rmit.edu.au/switch/panel-night" }
+  ],
+  "previous": [
+    { "id": "11", "name": "Capture The Flag", "date": "15-16th Aug 2026", "image": "/pics/events/ctf-sem22026.jpg", "bgColor": "bg-white", "rotation": -3 },
+    { "id": "10", "name": "Welcome Night - Sem 2 2026", "date": "30 July 2026", "image": "/pics/events/welcome-night-sem22026.jpg", "bgColor": "bg-white", "rotation": 3 },
+    { "id": "6", "name": "Inter-Uni Industry Networking Night ", "date": "21 May 2026", "image": "/pics/events/interuni-sem12026.jpg", "bgColor": "bg-white", "rotation": -3 },
+    { "id": "5", "name": "Get Organised w/ Notion Workshop", "date": "14 May 2026", "image": "/pics/events/notion-workshop-sem12026.jpg", "bgColor": "bg-white", "rotation": 2 },
+    { "id": "4", "name": "Semester 1 Team Bonding", "date": "14 April 2026", "image": "/pics/events/team-bonding-sem12026.jpg", "bgColor": "bg-white", "rotation": 1 },
+    { "id": "7", "name": "Introduction to Leetcode", "date": "8 May 2026", "image": "/pics/events/intro-leetcode-sem12026.jpg", "bgColor": "bg-white", "rotation": -5 },
+    { "id": "8", "name": "Paint & Sip", "date": "2 April 2026", "image": "/pics/events/paint-sip-sem12026.jpg", "bgColor": "bg-white", "rotation": -2 },
+    { "id": "9", "name": "Welcome Night - Sem 1 2026", "date": "12 March 2026", "image": "/pics/events/welcome-night-sem12026.jpg", "bgColor": "bg-white", "rotation": 3 }
+  ]
+}

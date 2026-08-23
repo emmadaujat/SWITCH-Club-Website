@@ -14,10 +14,7 @@ interface FormData {
   message: string;
 }
 
-interface StatusState {
-  type: "success" | "error" | null;
-  message: string;
-}
+type FormErrors = Partial<Record<keyof FormData, string>>;
 
 export default function ContactUsPage() {
   const [formData, setFormData] = useState<FormData>({
@@ -27,8 +24,9 @@ export default function ContactUsPage() {
     message: "",
   });
 
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errors, setErrors] = useState<FormErrors>({});
   const [loading, setLoading] = useState<boolean>(false);
-  const [status, setStatus] = useState<StatusState>({ type: null, message: "" });
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const { name, value } = e.target;
@@ -36,20 +34,52 @@ export default function ContactUsPage() {
       ...prev,
       [name]: value,
     }));
+
+    // clear the fields error when user starts typing
+    if (errors[name as keyof FormData]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
+  }
+
+  function validate(): FormErrors {
+    const newErrors: FormErrors = {};
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = "Full name is required";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Email invalid";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    }
+    return newErrors;
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setStatus({ type: null, message: "" });
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return; // stop here, don't call the API
+    }
+    setStatus("submitting");
     try {
-      //TODO: replace with api call once contact endpoint exists
-      console.log("Submitted Data: ", formData);
-      await new Promise((resolve) => setTimeout(resolve, 8000));
-      setStatus({ type: "success", message: "" });
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("Failed to submit");
+      setStatus("success");
       setFormData({ fullName: "", email: "", studentID: "", message: "" });
+      setErrors({});
     } catch (err) {
       console.error(err);
-      setStatus({ type: "error", message: "" });
+      setStatus("error");
     }
   }
 
@@ -96,7 +126,7 @@ export default function ContactUsPage() {
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="p-5 flex flex-col gap-6">
+            <form onSubmit={handleSubmit} noValidate className="p-5 flex flex-col gap-6">
               <div className="flex flex-col md:flex-row gap-10">
                 {/* LEFT COLUMN: three fields stacked */}
                 <div className="flex flex-col gap-5 md:w-1/2">
@@ -109,8 +139,13 @@ export default function ContactUsPage() {
                       value={formData.fullName}
                       onChange={handleChange}
                       required
-                      className="text-xs bg-white outline-2 outline-dashed outline-black w-full rounded p-4"
+                      className={`bg-white outline-2 outline-dashed rounded p-2 w-full ${
+                        errors.fullName ? "outline-red-600" : "outline-black"
+                      }`}
                     />
+                    {errors.fullName && (
+                      <span className="text-sm text-red-600">{errors.fullName}</span>
+                    )}
                   </label>
                   <label className="flex flex-col gap-1">
                     <span className="text-small font-semibold text-black">Email</span>
@@ -121,8 +156,11 @@ export default function ContactUsPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="text-xs bg-white outline-2 w-full outline-dashed outline-black rounded p-4"
+                      className={`bg-white outline-2 outline-dashed rounded p-2 w-full ${
+                        errors.email ? "outline-red-600" : "outline-black"
+                      }`}
                     />
+                    {errors.email && <span className="text-sm text-red-600">{errors.email}</span>}
                   </label>
 
                   <label className="flex flex-col gap-1">
@@ -133,7 +171,7 @@ export default function ContactUsPage() {
                       name="studentID"
                       value={formData.studentID}
                       onChange={handleChange}
-                      className="text-xs bg-white outline-2 outline-dashed outline-black w-full rounded p-4"
+                      className="bg-white outline-2 outline-dashed outline-black rounded p-2 w-full"
                     />
                   </label>
                 </div>
@@ -148,13 +186,27 @@ export default function ContactUsPage() {
                     required
                     onChange={handleChange}
                     rows={8}
-                    className="text-xs bg-white outline-2 outline-dashed outline-black rounded p-4 w-full resize-none"
+                    className={`bg-white outline-2 outline-dashed rounded p-2 w-full resize-none ${
+                      errors.message ? "outline-red-600" : "outline-black"
+                    }`}
                   />
+                  {errors.message && <span className="text-sm text-red-600">{errors.message}</span>}
                 </label>
               </div>
-              <ChunkyButton variant="primary" trailingSymbol="→">
-                SUBMIT
-              </ChunkyButton>
+              <button
+                type="submit"
+                disabled={status === "submitting"}
+                className="bg-brand-purple text-white font-bold rounded-lg border-2 border-black p-4 shadow-[4px_4px_0px_#000] hover:bg-white hover:text-brand-purple transition disabled:opacity-50"
+              >
+                {status === "submitting" ? "Sending..." : "SUBMIT ★"}
+              </button>
+
+              {status === "success" && (
+                <p className="text-sm text-green-700">Thanks! We'll be in touch soon.</p>
+              )}
+              {status === "error" && (
+                <p className="text-sm text-red-700">Something went wrong — please try again.</p>
+              )}
             </form>
           </TiltedCard>
         </div>
