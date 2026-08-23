@@ -55,7 +55,6 @@ export default function JoinTheClubPage() {
             <p>See what SWITCH have been up to and whats happening up soon!</p>
           </div>
           {/* BUTTON */}
-          {/* TODO: make all links open in seperate tab */}
           <div className=" m-5 justify-end flex">
             <Link
               href="https://www.instagram.com/rmitswitch/"
@@ -83,8 +82,6 @@ export default function JoinTheClubPage() {
             <p>Meet the team and community in person</p>
           </div>
           {/* BUTTON */}
-          {/* TODO: make all links open in seperate tab */}
-
           <div className=" m-5 justify-end flex">
             <Link
               href="https://campus.hellorubric.com/?s=10199"
