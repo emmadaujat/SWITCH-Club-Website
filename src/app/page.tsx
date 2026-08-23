@@ -89,7 +89,7 @@ export default function Home() {
                 </div>
 
                 <img
-                  src="pics/events/welcome-night-sem12026.jpg"
+                  src="pics/events/team-bonding-sem12026.jpg"
                   alt="the switch crew"
                   className="w-80 h-46 object-cover"
                 />
@@ -206,7 +206,6 @@ export default function Home() {
                   </div>
 
                   {/* BUTTON */}
-                  {/* TODO: make all links open in seperate tab */}
                   <div className=" p-4 justify-start flex">
                     <Link href={featuredEvent.ticketUrl} target="_blank" rel="noopener noreferrer">
                       <ChunkyButton variant="primary" trailingSymbol="→">

@@ -155,7 +155,6 @@ export default function Footer() {
             &copy; 2026 SWITCH — RMIT University Club. All rights reserved.
             <p className="italic">EST. 2019</p>
           </div>
-          {/* TODO: check if this needs to be included */}
           <div className="flex gap-x-6 text-xs text-slate-400">
             <a href="#" className="hover:text-white transition">
               Privacy Policy

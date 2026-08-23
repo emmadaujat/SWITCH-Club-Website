@@ -149,7 +149,6 @@ export default function WhoWeArePage() {
 
             {/* BUTTONS */}
             <div className=" mt-6 justify-end flex">
-              {/* TODO: make all links open in seperate tab */}
               <ChunkyButton variant="other" trailingSymbol="→" href="/how-to-join">
                 JOIN THE MOVEMENT
               </ChunkyButton>
