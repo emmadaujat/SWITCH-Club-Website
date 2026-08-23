@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-brand-purple-dark text-white">
@@ -28,7 +30,6 @@ export default function Footer() {
             </div>
 
             {/* Explore */}
-            {/* TODO: make all links open in seperate tab */}
             <div>
               <h3 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
                 <span className="text-brand-pink">★</span> Explore{" "}
@@ -96,7 +97,11 @@ export default function Footer() {
               </h3>
               <ul className="p-3 flex gap-2">
                 <li>
-                  <a href="https://www.linkedin.com/in/rmit-switch-admin-60b26b197/">
+                  <a
+                    href="https://www.linkedin.com/in/rmit-switch-admin-60b26b197/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       className="h-7 w-auto object-contain"
                       src="/linkedin.png"
@@ -105,7 +110,11 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/rmitswitch/">
+                  <a
+                    href="https://www.instagram.com/rmitswitch/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       className="h-7 w-auto object-contain"
                       src="/instagram.png"
@@ -114,7 +123,11 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://discord.com/invite/K3qDPGx9Xs">
+                  <a
+                    href="https://discord.com/invite/K3qDPGx9Xs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       className="h-7 w-auto object-contain"
                       src="/discord.png"

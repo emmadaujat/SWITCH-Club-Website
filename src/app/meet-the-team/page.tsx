@@ -39,11 +39,11 @@ export default function MeetTheTeamPage() {
         <h1 className=" text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
           Meet the team
         </h1>
-        <p>Placeholder intro line about the committee and what they do.</p>
+        <p>The team keeping SWITCH, switched on</p>
       </div>
 
       {/* ---------------- SECTION 1: EXECUTIVE COMMITTEE ---------------- */}
-      <div className="bg-brand-purple px-10 pt-10 pb-20">
+      <div className="bg-brand-purple px-20 pt-10 pb-20">
         <div className="mb-10 flex flex-col items-center">
           <div className="rounded-full border-2 border-black bg-brand-pink px-6">
             <h3 className="font-extrabold uppercase text-2xl text-black">EXECUTIVE COMMITTEE</h3>

@@ -30,15 +30,16 @@ export default function JoinTheClubPage() {
             <p>Fill out our quick membership form, it only takes 2 minutes!</p>
           </div>
           {/* BUTTON */}
-          {/* TODO: make all links open in seperate tab */}
           <div className=" m-5 justify-end flex">
-            <ChunkyButton
-              variant="primary"
-              trailingSymbol="→"
-              href={"https://campus.hellorubric.com/?s=10199"}
+            <Link
+              href="https://campus.hellorubric.com/?s=10199"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Join the club
-            </ChunkyButton>
+              <ChunkyButton variant="primary" trailingSymbol="→">
+                Join the club
+              </ChunkyButton>
+            </Link>
           </div>
         </TiltedCard>
 
@@ -50,19 +51,21 @@ export default function JoinTheClubPage() {
             </h1>
           </div>
           <div className="p-4">
-            <h2 className="font-bold text-xl ">Join our Discord</h2>
-            <p>Get access to announcements, chats and event links</p>
+            <h2 className="font-bold text-xl ">Follow us on Instagram</h2>
+            <p>See what SWITCH have been up to and whats happening up soon!</p>
           </div>
           {/* BUTTON */}
           {/* TODO: make all links open in seperate tab */}
           <div className=" m-5 justify-end flex">
-            <ChunkyButton
-              variant="primary"
-              trailingSymbol="→"
-              href="https://discord.com/invite/K3qDPGx9Xs"
+            <Link
+              href="https://www.instagram.com/rmitswitch/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Join discord
-            </ChunkyButton>
+              <ChunkyButton variant="primary" trailingSymbol="→">
+                Follow us
+              </ChunkyButton>
+            </Link>
           </div>
         </TiltedCard>
 
@@ -83,9 +86,15 @@ export default function JoinTheClubPage() {
           {/* TODO: make all links open in seperate tab */}
 
           <div className=" m-5 justify-end flex">
-            <ChunkyButton variant="other" trailingSymbol="→" href="/how-to-join">
-              Join the club
-            </ChunkyButton>
+            <Link
+              href="https://campus.hellorubric.com/?s=10199"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ChunkyButton variant="other" trailingSymbol="→">
+                See Events
+              </ChunkyButton>
+            </Link>
           </div>
         </TiltedCard>
       </div>

@@ -2,12 +2,27 @@ import Image from "next/image";
 import TiltedCard from "@/components/ui/TiltedCard";
 import ChunkyButton from "@/components/ui/ChunkyButton";
 import Sticker from "@/components/ui/Sticker";
+import eventsData from "@/data/events.json";
+import { UpcomingEvent } from "@/types/events";
+import sponsorsData from "@/data/sponsors.json";
+import { SponsorTier, Sponsor } from "@/types/sponsors";
+import { TeamMember } from "@/components/ui/TeamMemberCard";
+import Link from "next/link";
+import SponsorGrid from "@/components/ui/SponsorGrid";
 
 export default function Home() {
+  const upcomingEvents = eventsData.upcoming as UpcomingEvent[];
+  // feature the next upcoming event (first in the array)
+  const featuredEvent = upcomingEvents[0];
+
+  const sponsorRotations = [3, -2, 6, -6, 4, -4];
+
+  const sponsors = sponsorsData.sponsors as Sponsor[];
+
   return (
     <div className=" bg-brand-light">
       {/* TOP SECTION */}
-      <div className="mx-auto max-w-7xl mb-10 py-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="mx-auto max-w-7xl mb-10 py-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* TOP LEFT: text + buttons */}
         <div className=" items-center text-center flex flex-col">
           <h1 className=" text-6xl md:text-8xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:6px_black] [paint-order:stroke_fill]">
@@ -38,8 +53,6 @@ export default function Home() {
             {/* STARS */}
             <div className="absolute -top-12 right-86 text-brand-purple text-4xl">★</div>
             <div className="absolute -top-2 right-92 text-brand-purple text-2xl">★</div>
-
-            {/* TODO: make all links open in seperate tab */}
             <ChunkyButton variant="primary" trailingSymbol="★" href="/how-to-join">
               JOIN THE CLUB
             </ChunkyButton>
@@ -76,7 +89,7 @@ export default function Home() {
                 </div>
 
                 <img
-                  src="/pics/team-bonding-sem12026.jpg"
+                  src="pics/events/welcome-night-sem12026.jpg"
                   alt="the switch crew"
                   className="w-80 h-46 object-cover"
                 />
@@ -93,7 +106,7 @@ export default function Home() {
                 </div>
 
                 <img
-                  src="/pics/notion-workshop-sem12026.jpg"
+                  src="pics/events/notion-workshop-sem12026.jpg"
                   alt="workshop vibes"
                   className="w-80 h-46 object-cover"
                 />
@@ -110,7 +123,7 @@ export default function Home() {
                 </div>
 
                 <img
-                  src="/pics/interuni-sem12026.jpg"
+                  src="/pics/events/interuni-sem12026.jpg"
                   alt="Inter-Uni Industry Networking 2026"
                   className="w-80 h-46 object-cover"
                 />
@@ -122,7 +135,7 @@ export default function Home() {
       </div>
 
       {/* MIDDLE SECTION: OUR MISSION */}
-      <div className=" bg-brand-purple p-10">
+      <div className=" bg-brand-purple p-20">
         {/* Layout wrapper — width/centering stays here */}
         <div className="relative mx-auto max-w-xl">
           <TiltedCard rotation={2} bgColor="bg-brand-cream">
@@ -152,7 +165,6 @@ export default function Home() {
             </p>
 
             {/* BUTTONS */}
-            {/* TODO: make all links open in seperate tab */}
             <div className=" mt-6 justify-end flex">
               <ChunkyButton variant="other" trailingSymbol="→" href="/who-are-we">
                 Read our story
@@ -163,59 +175,78 @@ export default function Home() {
       </div>
 
       {/* BOTTOM SECTION: UPCOMING EVENT */}
-      <div className=" bg-brand-purple-LIGHT p-10">
+      <div className=" bg-brand-purple-LIGHT p-20">
         <div className="mx-auto max-w-4xl">
-          <TiltedCard rotation={2} bgColor="bg-brand-lime">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-              {" "}
-              <Sticker rotation={1} bgColor="bg-stickytape-pink" size="w-40 h-8" />
-            </div>
+          {featuredEvent ? (
+            <TiltedCard rotation={2} bgColor="bg-brand-lime">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                {" "}
+                <Sticker rotation={1} bgColor="bg-stickytape-pink" size="w-40 h-8" />
+              </div>
 
-            {/* Two-column split now lives INSIDE the card */}
-            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
-              {/* LEFT: heading + body + button, grouped together */}
-              <div className="flex flex-col">
-                <div className="p-2 mt-5 flex rotate-4">
-                  {/* UPCOMING EVENT - Heading */}
-                  <div className="rounded-full border-2 border-black bg-white p-2 rotate-2 self-start ">
-                    <p className="font-bold uppercase text-xl text-black">upcoming event 🚨</p>
+              {/* Two-column split now lives INSIDE the card */}
+              <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                {/* LEFT: heading + body + button, grouped together */}
+                <div className="flex flex-col">
+                  <div className="p-2 mt-5 flex rotate-4">
+                    {/* UPCOMING EVENT - Heading */}
+                    <div className="rounded-full border-2 border-black bg-white p-2 rotate-2 self-start ">
+                      <p className="font-bold uppercase text-xl text-black">upcoming event 🚨</p>
+                    </div>
+                  </div>
+
+                  {/* UPCOMING EVENT - BODY TEXT */}
+                  <div className="p-2">
+                    <p className="font-bold text-2xl ">{featuredEvent.name}</p>
+                    <p>📅 {featuredEvent.date}</p>
+                    <p> 📍 {featuredEvent.location} </p>
+                    <p className="font-semibold mt-2 text-md">
+                      Come have fun with us and meet new people!
+                    </p>
+                  </div>
+
+                  {/* BUTTON */}
+                  {/* TODO: make all links open in seperate tab */}
+                  <div className=" p-4 justify-start flex">
+                    <Link href={featuredEvent.ticketUrl} target="_blank" rel="noopener noreferrer">
+                      <ChunkyButton variant="primary" trailingSymbol="→">
+                        buy a ticket now
+                      </ChunkyButton>
+                    </Link>
                   </div>
                 </div>
 
-                {/* UPCOMING EVENT - BODY TEXT */}
-                <div className="p-2">
-                  <p className="font-bold text-2xl ">Welcome Night with Fire+</p>
-                  <p>📅 30th July 2026</p>
-                  <p> 📍 Carlton Club Hotel </p>
-                  <p className="font-semibold mt-2 text-md">
-                    Come have fun with us as we welcome semester 2
-                  </p>
-                </div>
-
-                {/* BUTTON */}
-                {/* TODO: make all links open in seperate tab */}
-
-                <div className=" p-4 justify-start flex">
-                  <ChunkyButton
-                    variant="primary"
-                    trailingSymbol="→"
-                    href="https://campus.hellorubric.com/?s=10199"
-                  >
-                    buy a ticket now
-                  </ChunkyButton>
+                {/* RIGHT: photo placeholder */}
+                <div className="m-4 rounded-lg flex items-center justify-center">
+                  <img
+                    className="h-70 w-auto "
+                    alt={featuredEvent.name}
+                    src="/pics//events/welcome-night-sem12026.JPG"
+                  />
                 </div>
               </div>
-
-              {/* RIGHT: photo placeholder */}
-              <div className="m-4 rounded-lg flex items-center justify-center">
-                <img
-                  className="h-70 w-auto "
-                  alt="switch-team-welcome-night-sem1-2026"
-                  src="/pics/welcome-night-sem1-2026.JPG"
-                />
-              </div>
-            </div>
-          </TiltedCard>
+            </TiltedCard>
+          ) : (
+            <p className="text-center">No upcoming events right now - check back soon!</p>
+          )}
+        </div>
+      </div>
+      {/* CURRENT SPONSORS */}
+      <div className="py-10 bg-brand-purple">
+        <div className="mb-10 flex flex-row justify-center ">
+          <span className="text-brand-pink text-4xl mr-2">★</span>
+          <div className="rounded-full border-2 border-black bg-brand-lime py-2 px-5">
+            <h3 className="font-extrabold uppercase text-2xl text-black">
+              With thanks to our Sponsors
+            </h3>
+          </div>
+          <span className="text-brand-pink text-4xl ml-2">★</span>
+        </div>
+        <SponsorGrid sponsors={sponsors} cardsPerRow={3} />
+        <div className="flex justify-center mt-10">
+          <ChunkyButton variant="other" trailingSymbol="→" href={"/sponsorships"}>
+            Become a sponsor today
+          </ChunkyButton>
         </div>
       </div>
     </div>
