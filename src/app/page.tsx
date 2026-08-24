@@ -186,17 +186,17 @@ export default function Home() {
               {" "}
               <Sticker rotation={6} />
             </div>
-            <div className=" md:block absolute -top-2 right-4 -translate-x-1">
+            <div className="hidden md:block absolute -top-2 right-5 -translate-x-1">
               {" "}
               <Sticker rotation={-2} />
             </div>
 
             {/* OUR MISSION - Heading with stars*/}
             <div className="p-2 mt-5 flex rotate-4 relative">
-              <div className=" md:block absolute -top-2 right-5 text-brand-lime text-3xl rotation-6">
+              <div className="hidden md:block absolute -top-2 right-5 text-brand-lime text-4xl rotation-6">
                 ★
               </div>
-              <div className=" md:block absolute -top-6 right-15 text-brand-pink text-xl rotation-6">
+              <div className="hidden md:block absolute -top-6 right-15 text-brand-pink text-2xl rotation-6">
                 ★
               </div>
 
@@ -222,11 +222,11 @@ export default function Home() {
       </div>
 
       {/* BOTTOM SECTION: UPCOMING EVENT */}
-      <div className=" bg-brand-purple-LIGHT p-20">
+      <div className=" bg-brand-purple-LIGHT p-6 md:p-10">
         <div className="mx-auto max-w-4xl">
           {featuredEvent ? (
             <TiltedCard rotation={1} bgColor="bg-brand-lime">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+              <div className="hidden md:block absolute -top-4 left-1/2 -translate-x-1/2">
                 {" "}
                 <Sticker rotation={1} bgColor="bg-stickytape-pink" size="w-40 h-8" />
               </div>
@@ -238,13 +238,15 @@ export default function Home() {
                   <div className="p-2 mt-5 flex rotate-4">
                     {/* UPCOMING EVENT - Heading */}
                     <div className="rounded-full border-2 border-black bg-white p-2 rotate-1 self-start ">
-                      <p className="font-bold uppercase text-xl text-black">upcoming event 🚨</p>
+                      <p className="font-bold uppercase text-lg md:text-xl text-black">
+                        upcoming event 🚨
+                      </p>
                     </div>
                   </div>
 
                   {/* UPCOMING EVENT - BODY TEXT */}
                   <div className="p-2">
-                    <p className="font-bold text-2xl ">{featuredEvent.name}</p>
+                    <p className="font-bold text-xl md:text-2xl ">{featuredEvent.name}</p>
                     <p>📅 {featuredEvent.date}</p>
                     <p> 📍 {featuredEvent.location} </p>
                     <p className="font-semibold mt-2 text-md">
@@ -263,9 +265,9 @@ export default function Home() {
                 </div>
 
                 {/* RIGHT: photo placeholder */}
-                <div className="m-2 rounded-lg flex justify-center ">
+                <div className="m-4 rounded-lg flex items-center justify-center">
                   <img
-                    className="h-60 w-auto "
+                    className="h-40 md:h-50 w-auto "
                     alt={featuredEvent.name}
                     src="/pics/events/welcome-night-sem12026.JPG"
                   />
