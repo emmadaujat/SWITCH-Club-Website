@@ -22,20 +22,21 @@ export default function Home() {
   return (
     <div className=" bg-brand-light">
       {/* TOP SECTION */}
-      <div className="mx-auto max-w-7xl mb-10 py-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="mx-auto max-w-7xl mb-10 px-4 py-10 md:px-0 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* TOP LEFT: text + buttons */}
         <div className=" items-center text-center flex flex-col">
-          <h1 className=" text-6xl md:text-8xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:6px_black] [paint-order:stroke_fill]">
+          <h1 className=" text-5xl sm:text-6xl md:text-8xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:6px_black] [paint-order:stroke_fill]">
             SWITCH
           </h1>
 
-          <div className="mt-6 rounded-lg border-2 border-black bg-white p-4 shadow-[4px_4px_0px_#000] relative">
-            <div className="absolute -top-3 left-125 -translate-x-0">
+          <div className="mt-6 rounded-lg border-2 border-black bg-white p-4 shadow-[4px_4px_0px_#000] relative max-w-sm md:max-w-none">
+            {/* sticker hidden on mobile — relies on a fixed pixel offset that only makes sense on wide screens */}
+            <div className="hidden md:block absolute -top-3 left-110 -translate-x-0">
               {" "}
               <Sticker rotation={15} bgColor="bg-stickytape-pink" size="w-25 h-6" />
             </div>
 
-            <p className="font-medium text-13px text-brand-purple-dark">
+            <p className="font-medium text-sm md:text-13px text-brand-purple-dark">
               Society for women and gender diverse students in technology @ RMIT
             </p>
           </div>
@@ -43,16 +44,22 @@ export default function Home() {
           {/* green banner */}
           <div className="mt-6 flex flex-col items-center self-stretch">
             <div className="rounded-full border-2 border-black bg-brand-lime p-2">
-              <p className="font-bold uppercase text-2xl text-black">✦ NEW MEMBERS WELCOME ✦</p>
+              <p className="font-bold uppercase text-lg md:text-2xl text-black text-center">
+                ✦ NEW MEMBERS WELCOME ✦
+              </p>
             </div>
           </div>
 
           {/* BUTTONS */}
-          <div className="mt-30 flex gap-6 relative">
-            {/* Navigation */}
-            {/* STARS */}
-            <div className="absolute -top-12 right-86 text-brand-purple text-4xl">★</div>
-            <div className="absolute -top-2 right-92 text-brand-purple text-2xl">★</div>
+          <div className="mt-10 md:mt-30 flex flex-col sm:flex-row gap-6 relative w-full sm:w-auto">
+            {/* STARS — decorative, positioned relative to desktop button spacing, hide on mobile */}
+            <div className="hidden md:block absolute -top-12 right-86 text-brand-purple text-4xl">
+              ★
+            </div>
+            <div className="hidden md:block absolute -top-2 right-92 text-brand-purple text-2xl">
+              ★
+            </div>
+
             <ChunkyButton variant="primary" trailingSymbol="★" href="/how-to-join">
               JOIN THE CLUB
             </ChunkyButton>
@@ -64,12 +71,51 @@ export default function Home() {
 
         {/* TOP RIGHT */}
         <div>
-          <div className="ml-auto w-fit rounded-lg border-2 border-black bg-brand-pink p-3">
-            <p className="text-black text-xl font-bold"> Current Members: 350</p>
+          <div className="mx-auto md:ml-auto md:mr-0 w-fit rounded-lg border-2 border-black bg-brand-pink p-3">
+            <p className="text-black text-lg md:text-xl font-bold"> Current Members: 350</p>
           </div>
 
+          {/* MOBILE: simple stacked polaroids, no absolute positioning */}
+          <div className="flex gap-6 overflow-x-auto px-6 py-6 md:hidden snap-x snap-mandatory">
+            <div className="shrink-0 snap-center">
+              <TiltedCard rotation={-4} bgColor="bg-white">
+                <img
+                  src="/pics/events/notion-workshop-sem12026.jpg"
+                  alt="workshop vibes"
+                  className="w-52 h-32 object-cover"
+                />
+                <p className="pt-2 font-semibold text-xs">workshop vibes 💻 ✨</p>
+              </TiltedCard>
+            </div>
+
+            <div className="shrink-0 snap-center">
+              <TiltedCard rotation={3} bgColor="bg-white">
+                <img
+                  src="/pics/events/team-bonding-sem12026.jpg"
+                  alt="the switch crew"
+                  className="w-52 h-32 object-cover"
+                />
+                <p className="pt-2 font-semibold text-xs">the switch crew ✨</p>
+              </TiltedCard>
+            </div>
+
+            <div className="shrink-0 snap-center">
+              <TiltedCard rotation={-3} bgColor="bg-white">
+                <img
+                  src="/pics/events/interuni-sem12026.jpg"
+                  alt="Inter-Uni Industry Networking 2026"
+                  className="w-52 h-32 object-cover"
+                />
+                <p className="pt-2 w-35 font-semibold text-xs break-words">
+                  Inter-Uni Industry Networking 2026
+                </p>
+              </TiltedCard>
+            </div>
+          </div>
+
+          {/* DESKTOP: layout */}
           {/* STARS */}
-          <div className="relative h-[520px] mx-auto ">
+          <div className="hidden md:block relative h-[520px] mx-auto">
             <div className="absolute -top-2 right-162 -translate-x-1 -translate-y-3 text-brand-lime text-3xl">
               ★
             </div>
@@ -87,9 +133,8 @@ export default function Home() {
                   {" "}
                   <Sticker rotation={1} bgColor="bg-stickytape-pink" />
                 </div>
-
                 <img
-                  src="pics/events/team-bonding-sem12026.jpg"
+                  src="/pics/events/team-bonding-sem12026.jpg"
                   alt="the switch crew"
                   className="w-80 h-46 object-cover"
                 />
@@ -104,9 +149,8 @@ export default function Home() {
                   {" "}
                   <Sticker rotation={1} bgColor="bg-stickytape-green" />
                 </div>
-
                 <img
-                  src="pics/events/notion-workshop-sem12026.jpg"
+                  src="/pics/events/notion-workshop-sem12026.jpg"
                   alt="workshop vibes"
                   className="w-80 h-46 object-cover"
                 />
@@ -121,7 +165,6 @@ export default function Home() {
                   {" "}
                   <Sticker rotation={1} bgColor="bg-stickytape-purple" />
                 </div>
-
                 <img
                   src="/pics/events/interuni-sem12026.jpg"
                   alt="Inter-Uni Industry Networking 2026"
@@ -135,31 +178,35 @@ export default function Home() {
       </div>
 
       {/* MIDDLE SECTION: OUR MISSION */}
-      <div className=" bg-brand-purple p-20">
+      <div className=" bg-brand-purple p-6 md:p-10">
         {/* Layout wrapper — width/centering stays here */}
         <div className="relative mx-auto max-w-xl">
           <TiltedCard rotation={2} bgColor="bg-brand-cream">
-            <div className="absolute -top-2 left-5 -translate-x-1">
+            <div className="hidden md:block absolute -top-2 left-5 -translate-x-1">
               {" "}
               <Sticker rotation={6} />
             </div>
-            <div className="absolute -top-2 right-5 -translate-x-1">
+            <div className="hidden md:block absolute -top-2 right-5 -translate-x-1">
               {" "}
-              <Sticker rotation={-6} />
+              <Sticker rotation={-2} />
             </div>
 
             {/* OUR MISSION - Heading with stars*/}
             <div className="p-2 mt-5 flex rotate-4 relative">
-              <div className="absolute -top-2 right-5 text-brand-lime text-4xl rotation-6">★</div>
-              <div className="absolute -top-6 right-15 text-brand-pink text-2xl rotation-6">★</div>
+              <div className="hidden md:block absolute -top-2 right-5 text-brand-lime text-4xl rotation-6">
+                ★
+              </div>
+              <div className="hidden md:block absolute -top-6 right-15 text-brand-pink text-2xl rotation-6">
+                ★
+              </div>
 
               <div className="rounded-full border-2 border-black bg-brand-pink p-2">
-                <p className="font-bold uppercase text-xl text-black">our mission</p>
+                <p className="font-bold uppercase text-lg md:text-xl text-black">our mission</p>
               </div>
             </div>
 
             {/* OUR MISSION - BODY TEXT */}
-            <p className="p-2 font-bold text-lg text-black">
+            <p className="p-2 font-bold text-base md:text-lg text-black">
               “We're building a community where women and underrepresented people in tech can learn,
               connect, and thrive together.”
             </p>
@@ -175,11 +222,11 @@ export default function Home() {
       </div>
 
       {/* BOTTOM SECTION: UPCOMING EVENT */}
-      <div className=" bg-brand-purple-LIGHT p-20">
+      <div className=" bg-brand-purple-LIGHT p-6 md:p-10">
         <div className="mx-auto max-w-4xl">
           {featuredEvent ? (
-            <TiltedCard rotation={2} bgColor="bg-brand-lime">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+            <TiltedCard rotation={1} bgColor="bg-brand-lime">
+              <div className="hidden md:block absolute -top-4 left-1/2 -translate-x-1/2">
                 {" "}
                 <Sticker rotation={1} bgColor="bg-stickytape-pink" size="w-40 h-8" />
               </div>
@@ -190,14 +237,16 @@ export default function Home() {
                 <div className="flex flex-col">
                   <div className="p-2 mt-5 flex rotate-4">
                     {/* UPCOMING EVENT - Heading */}
-                    <div className="rounded-full border-2 border-black bg-white p-2 rotate-2 self-start ">
-                      <p className="font-bold uppercase text-xl text-black">upcoming event 🚨</p>
+                    <div className="rounded-full border-2 border-black bg-white p-2 rotate-1 self-start ">
+                      <p className="font-bold uppercase text-lg md:text-xl text-black">
+                        upcoming event 🚨
+                      </p>
                     </div>
                   </div>
 
                   {/* UPCOMING EVENT - BODY TEXT */}
                   <div className="p-2">
-                    <p className="font-bold text-2xl ">{featuredEvent.name}</p>
+                    <p className="font-bold text-xl md:text-2xl ">{featuredEvent.name}</p>
                     <p>📅 {featuredEvent.date}</p>
                     <p> 📍 {featuredEvent.location} </p>
                     <p className="font-semibold mt-2 text-md">
@@ -206,7 +255,7 @@ export default function Home() {
                   </div>
 
                   {/* BUTTON */}
-                  <div className=" p-4 justify-start flex">
+                  <div className=" p-2 justify-center flex">
                     <Link href={featuredEvent.ticketUrl} target="_blank" rel="noopener noreferrer">
                       <ChunkyButton variant="primary" trailingSymbol="→">
                         buy a ticket now
@@ -218,9 +267,9 @@ export default function Home() {
                 {/* RIGHT: photo placeholder */}
                 <div className="m-4 rounded-lg flex items-center justify-center">
                   <img
-                    className="h-70 w-auto "
+                    className="h-40 md:h-50 w-auto "
                     alt={featuredEvent.name}
-                    src="/pics//events/welcome-night-sem12026.JPG"
+                    src="/pics/events/welcome-night-sem12026.JPG"
                   />
                 </div>
               </div>
@@ -231,11 +280,11 @@ export default function Home() {
         </div>
       </div>
       {/* CURRENT SPONSORS */}
-      <div className="py-10 bg-brand-purple">
+      <div className="px-4 py-10 md:px-0 bg-brand-purple">
         <div className="mb-10 flex flex-row justify-center ">
           <span className="text-brand-pink text-4xl mr-2">★</span>
           <div className="rounded-full border-2 border-black bg-brand-lime py-2 px-5">
-            <h3 className="font-extrabold uppercase text-2xl text-black">
+            <h3 className="font-extrabold uppercase text-xl text-black">
               With thanks to our Sponsors
             </h3>
           </div>
