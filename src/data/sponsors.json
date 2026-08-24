@@ -1,0 +1,77 @@
+{
+  "tiers": [
+    {
+      "id": "1",
+      "tierName": "GOLD",
+      "price": "$1600",
+      "benefits": [
+        "Up to 3 promotional social media posts a month",
+        "Promotional logo/branding at SWITCH events",
+        "An event hosted by your business on RMIT Campus or in CBD promoted by SWITCH to our members",
+        "A stand at all industry networking events held throughout the year ",
+        "Multiple email blasts to members",
+        "Logo on SWITCH website"
+      ],
+      "bgColor": "bg-gold",
+      "displayOrder": 1
+    },
+    {
+      "id": "2",
+      "tierName": "SILVER",
+      "price": "$1000",
+      "benefits": [
+        "Up to 2 promotional social media posts a month",
+        "Promotional logo/branding at all SWITCH events",
+        "A stand at all industry networking events held throughout the year",
+        "One email blast to members",
+        "Logo on SWITCH website"
+      ],
+      "bgColor": "bg-silver",
+      "displayOrder": 2
+    },
+    {
+      "id": "3",
+      "tierName": "BRONZE",
+      "price": "$500",
+      "benefits": [
+        "Up to 1 promotional social media posts a month",
+        "Promotional logo/branding at all SWITCH events",
+        "Logo on SWITCH website"
+
+      ],
+      "bgColor": "bg-bronze",
+      "displayOrder": 3
+    },
+    {
+      "id": "4",
+      "tierName": "OPAL",
+      "price": "$ choose your own!",
+      "benefits": [
+        "Custom configuration of benefits/price",
+        "A single shoutout post/event introducing your company to our members",
+        "Logo on SWITCH website",
+        "Ask us for a time to discuss alternative options!"
+
+      ],
+      "bgColor": "bg-opal",
+      "displayOrder": 3
+    }
+  ],
+
+  "sponsors": [
+    {
+      "id": "1",
+      "companyName": "Jane Street",
+      "logoUrl": "/pics/sponsors/jane-street-logo.png",
+      "website": "https://www.janestreet.com",
+      "tierId": "2"
+    },
+     {
+      "id": "2",
+      "companyName": "auDA",
+      "logoUrl": "/pics/sponsors/auDA-logo.png",
+      "website": "https://www.auda.org.au",
+      "tierId": "2"
+    }
+  ]
+}

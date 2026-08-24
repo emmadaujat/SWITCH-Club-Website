@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-brand-purple-dark text-white">
@@ -94,9 +96,12 @@ export default function Footer() {
                 <span className="text-brand-pink">★</span>
               </h3>
               <ul className="p-3 flex gap-2">
-                {/* TODO: put links to socials */}
                 <li>
-                  <a href="https://www.linkedin.com/in/rmit-switch-admin-60b26b197/">
+                  <a
+                    href="https://www.linkedin.com/in/rmit-switch-admin-60b26b197/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       className="h-7 w-auto object-contain"
                       src="/linkedin.png"
@@ -105,7 +110,11 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/rmitswitch/">
+                  <a
+                    href="https://www.instagram.com/rmitswitch/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       className="h-7 w-auto object-contain"
                       src="/instagram.png"
@@ -114,7 +123,11 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://discord.com/invite/K3qDPGx9Xs">
+                  <a
+                    href="https://discord.com/invite/K3qDPGx9Xs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       className="h-7 w-auto object-contain"
                       src="/discord.png"
@@ -142,7 +155,6 @@ export default function Footer() {
             &copy; 2026 SWITCH — RMIT University Club. All rights reserved.
             <p className="italic">EST. 2019</p>
           </div>
-          {/* TODO: check if this needs to be included */}
           <div className="flex gap-x-6 text-xs text-slate-400">
             <a href="#" className="hover:text-white transition">
               Privacy Policy
