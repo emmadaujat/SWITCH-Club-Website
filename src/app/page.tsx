@@ -269,7 +269,7 @@ export default function Home() {
                   <img
                     className="h-40 md:h-50 w-auto "
                     alt={featuredEvent.name}
-                    src="/pics/events/welcome-night-sem12026.JPG"
+                    src="/pics/events/welcome-night-sem12026.jpg"
                   />
                 </div>
               </div>
