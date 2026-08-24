@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-brand-purple-dark text-white">
-      <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
+      <div className="mx-auto max-w-7xl px-5 py-6 lg:px-4">
         {/* Logo + link columns sit side-by-side on desktop, stack on mobile */}
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
           {/* Logo */}
