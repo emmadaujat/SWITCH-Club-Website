@@ -2,16 +2,18 @@
 
 import TiltedCard from "@/components/ui/TiltedCard";
 import ChunkyButton from "@/components/ui/ChunkyButton";
-import Sticker from "@/components/ui/Sticker";
 import { useState } from "react";
 import eventsData from "@/data/events.json";
-import { UpcomingEvent, PreviousEvent } from "@/types/events";
+import { ClubEvent } from "@/types/events";
 import Link from "next/link";
+import { getUpcomingEvents, getPreviousEvents } from "@/helpers/events";
 
 export default function EventsPage() {
   const [activeTab, setActiveTab] = useState<"upcoming" | "previous">("upcoming");
-  const upcomingEvents = eventsData.upcoming as UpcomingEvent[];
-  const previousEvents = eventsData.previous as PreviousEvent[];
+
+  const allEvents = eventsData.events as ClubEvent[];
+  const upcomingEvents = getUpcomingEvents(allEvents);
+  const previousEvents = getPreviousEvents(allEvents);
 
   return (
     <div className="bg-brand-purple-light pb-10">
@@ -58,23 +60,25 @@ export default function EventsPage() {
                 </div>
                 <div className="p-4">
                   <p className="font-bold text-2xl">{event.name}</p>
-                  <p>📅 {event.date}</p>
+                  <p>📅 {event.displayDate}</p>
                   <p>📍 {event.location}</p>
                 </div>
-                <div className="m-5 justify-start flex">
-                  <Link href={event.ticketUrl} target="_blank" rel="noopener noreferrer">
-                    <ChunkyButton variant="primary" trailingSymbol="→">
-                      RSVP Now!
-                    </ChunkyButton>
-                  </Link>
-                </div>
+                {event.ticketUrl && (
+                  <div className="m-5 justify-start flex">
+                    <Link href={event.ticketUrl} target="_blank" rel="noopener noreferrer">
+                      <ChunkyButton variant="primary" trailingSymbol="→">
+                        RSVP Now!
+                      </ChunkyButton>
+                    </Link>
+                  </div>
+                )}
               </TiltedCard>
             ))
           : previousEvents.map((event) => (
               <TiltedCard key={event.id} rotation={event.rotation} bgColor={event.bgColor}>
                 <img src={event.image} alt={event.name} className="w-full h-60 object-cover" />
                 <p className="pt-2 font-semibold text-md">{event.name}</p>
-                <p className="text-sm">{event.date}</p>
+                <p className="text-sm">{event.displayDate}</p>
                 <div className="m-5 justify-end flex">
                   {/* TODO: link events to instagram posts/ linkedin posts */}
                   <ChunkyButton variant="other" trailingSymbol="→" href="/how-to-join">
@@ -83,7 +87,7 @@ export default function EventsPage() {
                 </div>
               </TiltedCard>
             ))}
-      </div>{" "}
+      </div>
     </div>
   );
 }

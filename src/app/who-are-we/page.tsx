@@ -147,7 +147,7 @@ export default function WhoWeArePage() {
                 <span className="text-brand-pink text-xl lg:text-3xl mr-3 [-webkit-text-stroke:1px_black] ">
                   ★
                 </span>
-                Continue to build a supportive community{" "}
+                Connect with industry professionals
               </p>
             </div>
 

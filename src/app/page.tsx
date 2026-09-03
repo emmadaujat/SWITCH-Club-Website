@@ -3,20 +3,20 @@ import TiltedCard from "@/components/ui/TiltedCard";
 import ChunkyButton from "@/components/ui/ChunkyButton";
 import Sticker from "@/components/ui/Sticker";
 import eventsData from "@/data/events.json";
-import { UpcomingEvent } from "@/types/events";
+import { ClubEvent } from "@/types/events";
 import sponsorsData from "@/data/sponsors.json";
 import { SponsorTier, Sponsor } from "@/types/sponsors";
 import { TeamMember } from "@/components/ui/TeamMemberCard";
 import Link from "next/link";
 import SponsorGrid from "@/components/ui/SponsorGrid";
+import { getUpcomingEvents, getPreviousEvents } from "@/helpers/events";
 
 export default function Home() {
-  const upcomingEvents = eventsData.upcoming as UpcomingEvent[];
-  // feature the next upcoming event (first in the array)
+  const allEvents = eventsData.events as ClubEvent[];
+  const upcomingEvents = getUpcomingEvents(allEvents);
   const featuredEvent = upcomingEvents[0];
 
   const sponsorRotations = [3, -2, 6, -6, 4, -4];
-
   const sponsors = sponsorsData.sponsors as Sponsor[];
 
   return (
@@ -244,7 +244,7 @@ export default function Home() {
                   {/* UPCOMING EVENT - BODY TEXT */}
                   <div className="p-2">
                     <p className="pb-2 font-bold text-md md:text-2xl ">{featuredEvent.name}</p>
-                    <p className="pb-1 text-sm md:text-lg">📅 {featuredEvent.date}</p>
+                    <p className="pb-1 text-sm md:text-lg">📅 {featuredEvent.displayDate}</p>
                     <p className="pb-1 text-sm md:text-lg"> 📍 {featuredEvent.location} </p>
                     <p className="font-semibold mt-2 text-sm md:text-lg">
                       Come have fun with us and meet new people!
@@ -261,13 +261,15 @@ export default function Home() {
                   />
                 </div>
                 {/* BUTTON */}
-                <div className="col-span-2 px-4 justify-end flex">
-                  <Link href={featuredEvent.ticketUrl} target="_blank" rel="noopener noreferrer">
-                    <ChunkyButton variant="primary" trailingSymbol="→">
-                      buy a ticket now
-                    </ChunkyButton>
-                  </Link>
-                </div>
+                {featuredEvent.ticketUrl && (
+                  <div className="col-span-2 px-4 justify-end flex">
+                    <Link href={featuredEvent.ticketUrl} target="_blank" rel="noopener noreferrer">
+                      <ChunkyButton variant="primary" trailingSymbol="→">
+                        buy a ticket now
+                      </ChunkyButton>
+                    </Link>
+                  </div>
+                )}
               </div>
             </TiltedCard>
           ) : (
