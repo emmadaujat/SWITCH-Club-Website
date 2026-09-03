@@ -25,7 +25,7 @@ export default function Home() {
       <div className="mx-auto max-w-7xl mb-10 px-4 py-10 md:px-0 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* TOP LEFT: text + buttons */}
         <div className=" items-center text-center flex flex-col">
-          <h1 className=" text-6xl sm:text-5xl md:text-8xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:6px_black] [paint-order:stroke_fill]">
+          <h1 className=" text-6xl sm:text-5xl md:text-8xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
             SWITCH
           </h1>
 

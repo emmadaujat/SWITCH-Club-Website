@@ -12,7 +12,7 @@ export default function WhoWeArePage() {
         <h2 className=" text-xl lg:text-2xl font-extrabold uppercase text-brand-purple">
           ABOUT SWITCH
         </h2>
-        <h1 className=" text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] [paint-order:stroke_fill]">
+        <h1 className=" text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
           WHO ARE WE...
         </h1>
         {/* TOP SECTION: OUR MISSION */}
