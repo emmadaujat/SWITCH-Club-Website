@@ -6,7 +6,7 @@ type SponsorGridProps = {
   cardsPerRow?: number;
 };
 
-const CARD_WIDTH_PX = 128; // matches w-32 in SponsorCard
+const CARD_WIDTH_PX = 128;
 const GAP_PX = 32;
 
 const ROTATION_SEQUENCE = [4, -4, 5, -5, 3, -3];

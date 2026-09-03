@@ -16,7 +16,7 @@ export default function SponsorCard({
   const content = (
     <div>
       <TiltedCard rotation={rotation} bgColor="bg-white">
-        <div className="w-25 sm:w-30 lg:w-35 lg:w- h-20 sm:h-25 lg:h-30 flex items-center justify-center">
+        <div className="w-25 sm:w-30 lg:w-35 h-20 sm:h-25 lg:h-30 flex items-center justify-center">
           <img src={logoUrl} alt={companyName} className="max-w-full max-h-full object-contain" />
         </div>
         <p className="pt-1 md:pt-3 text-sm font-semibold md:text-base">{companyName}</p>
