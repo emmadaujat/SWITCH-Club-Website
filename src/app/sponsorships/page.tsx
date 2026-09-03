@@ -31,7 +31,7 @@ export default function SponsorshipsPage() {
         <h2 className=" text-xl lg:text-2xl font-extrabold uppercase text-brand-purple">
           Become a Sponsor
         </h2>
-        <h1 className=" text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
+        <h1 className=" text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
           Sponsorships
         </h1>
         <p>Contribute to a society for empowering Women+ in tech</p>

@@ -23,7 +23,7 @@ export default function EventsPage() {
         <h2 className=" text-l lg:text-2xl font-extrabold uppercase text-brand-purple">
           What we've been up to
         </h2>
-        <h1 className="text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
           Events
         </h1>
         <p className="max-w-s lg:max-w-2xl text-center text-sm lg:text-md text-black">
