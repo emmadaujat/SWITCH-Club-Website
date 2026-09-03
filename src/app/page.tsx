@@ -8,6 +8,7 @@ import { Sponsor } from "@/types/sponsors";
 import Link from "next/link";
 import SponsorGrid from "@/components/ui/SponsorGrid";
 import { getUpcomingEvents } from "@/helpers/events";
+import SectionBadge from "@/components/ui/SectionBadge";
 
 export default function Home() {
   const allEvents = eventsData.events as ClubEvent[];
@@ -193,10 +194,9 @@ export default function Home() {
               <div className=" md:block absolute -top-6 right-15 text-brand-pink text-2xl rotation-6">
                 ★
               </div>
-
-              <div className="rounded-full border-2 border-black bg-brand-pink p-2">
-                <p className="font-bold uppercase text-lg md:text-xl text-black">our mission</p>
-              </div>
+              <SectionBadge bgColor="bg-brand-pink" textSize="text-lg md:text-xl">
+                our mission
+              </SectionBadge>
             </div>
 
             {/* OUR MISSION - BODY TEXT */}
@@ -231,11 +231,14 @@ export default function Home() {
                 <div className="flex flex-col">
                   <div className="p-2 mt-2 flex rotate-4">
                     {/* UPCOMING EVENT - Heading */}
-                    <div className="rounded-full border-2 border-black bg-white p-2 rotate-1 self-start ">
-                      <p className="font-bold uppercase text-md md:text-xl text-black">
-                        upcoming event 🚨
-                      </p>
-                    </div>
+                    <SectionBadge
+                      bgColor="bg-white"
+                      rotation="rotate-1"
+                      textSize="text-md md:text-xl"
+                      as="p"
+                    >
+                      upcoming event 🚨
+                    </SectionBadge>
                   </div>
 
                   {/* UPCOMING EVENT - BODY TEXT */}
@@ -278,11 +281,15 @@ export default function Home() {
       <div className="px-4 py-10 md:px-0 bg-brand-purple">
         <div className="mb-10 flex flex-row justify-center ">
           <span className="text-brand-pink text-3xl lg:text-4xl mr-2">★</span>
-          <div className="rounded-full border-2 border-black bg-brand-lime py-2 px-5">
-            <h3 className="font-extrabold uppercase text-md lg:text-lg text-black">
-              With thanks to our Sponsors
-            </h3>
-          </div>
+          <SectionBadge
+            bgColor="bg-brand-lime"
+            textSize="text-md lg:text-lg"
+            fontWeight="font-extrabold"
+            padding="py-2 px-5"
+            as="h3"
+          >
+            With thanks to our Sponsors{" "}
+          </SectionBadge>
           <span className="text-brand-pink text-3xl lg:text-4xl ml-2">★</span>
         </div>
         <SponsorGrid sponsors={sponsors} cardsPerRow={3} />

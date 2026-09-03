@@ -7,6 +7,7 @@ import eventsData from "@/data/events.json";
 import { ClubEvent } from "@/types/events";
 import Link from "next/link";
 import { getUpcomingEvents, getPreviousEvents } from "@/helpers/events";
+import SectionBadge from "@/components/ui/SectionBadge";
 
 export default function EventsPage() {
   const [activeTab, setActiveTab] = useState<"upcoming" | "previous">("upcoming");
@@ -54,9 +55,9 @@ export default function EventsPage() {
           ? upcomingEvents.map((event) => (
               <TiltedCard key={event.id} rotation={event.rotation} bgColor={event.bgColor}>
                 <div className="pl-4 pt-4 flex rotate-2">
-                  <div className="rounded-full border-2 border-black bg-white p-2 rotate-2 self-start">
-                    <p className="font-bold uppercase text-md lg:text-l text-black">{event.type}</p>
-                  </div>
+                  <SectionBadge bgColor="bg-white" textSize="text-md lg:text-l" as="p">
+                    {event.type}{" "}
+                  </SectionBadge>
                 </div>
                 <div className="p-2 mb-2">
                   <p className="font-bold text-l lg:text-xl">{event.name}</p>

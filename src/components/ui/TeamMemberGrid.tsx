@@ -1,18 +1,14 @@
+import CardGrid from "@/components/ui/CardGrid";
 import TeamMemberCard, { TeamMember } from "@/components/ui/TeamMemberCard";
 
 type TeamMemberGridProps = {
   members: TeamMember[];
-  stickerColor?: string; // default sticker color for the whole group, e.g. "bg-stickytape-green"
-  cardsPerRow?: number; // how many cards should sit on a full row (default 3)
+  stickerColor?: string;
+  cardsPerRow?: number;
 };
 
-// Keep this in sync with the lg: width used in TeamMemberCard (currently w-80 = 320px).
-// Only approximate at the sm/base sizes, same limitation as before this update.
-const CARD_WIDTH_PX = 320;
-const GAP_PX = 40;
-
-// Small, deliberate alternation so cards don't all lean the same way —
-// cycles through a few tilt angles instead of needing one passed in per member.
+// Keep in sync with the lg: width used in TeamMemberCard (currently w-70 = 280px).
+const CARD_WIDTH_PX = 280;
 const ROTATION_SEQUENCE = [5, -5, 6, -6, 8, -8];
 
 function resolveRotation(member: TeamMember, index: number) {
@@ -25,21 +21,19 @@ export default function TeamMemberGrid({
   stickerColor = "bg-stickytape-pink",
   cardsPerRow = 3,
 }: TeamMemberGridProps) {
-  const maxWidth = cardsPerRow * CARD_WIDTH_PX + (cardsPerRow - 1) * GAP_PX;
-
   return (
-    <div
-      className="mx-auto flex flex-wrap justify-center gap-10"
-      style={{ maxWidth: `${maxWidth}px` }}
-    >
-      {members.map((member, index) => (
+    <CardGrid
+      items={members}
+      cardWidthPx={CARD_WIDTH_PX}
+      cardsPerRow={cardsPerRow}
+      getKey={(member) => member.name}
+      renderCard={(member, index) => (
         <TeamMemberCard
-          key={member.name}
           member={member}
           rotation={resolveRotation(member, index)}
           stickerColor={member.stickerColor ?? stickerColor}
         />
-      ))}
-    </div>
+      )}
+    />
   );
 }

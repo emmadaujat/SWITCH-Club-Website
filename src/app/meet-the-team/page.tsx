@@ -1,6 +1,7 @@
 import Ticker from "@/components/ui/Ticker";
 import TeamMemberGrid from "@/components/ui/TeamMemberGrid";
 import { TeamMember } from "@/components/ui/TeamMemberCard";
+import SectionBadge from "@/components/ui/SectionBadge";
 
 // ---------------- HARDCODED DATA ----------------
 const EXECUTIVE_COMMITTEE: TeamMember[] = [
@@ -49,10 +50,16 @@ export default function MeetTheTeamPage() {
       {/* ---------------- SECTION 1: EXECUTIVE COMMITTEE ---------------- */}
       <div className="bg-brand-purple p-15">
         <div className="mb-10 flex flex-col items-center">
-          <div className="rounded-full border-2 border-black bg-brand-pink px-6">
-            <h3 className="font-extrabold uppercase text-2xl text-black">EXECUTIVE COMMITTEE</h3>
-          </div>
-        </div>
+          <SectionBadge
+            as="h3"
+            bgColor="bg-brand-pink"
+            fontWeight="font-extrabold"
+            textSize="text-xl lg:text-2xl"
+            padding="px-6"
+          >
+            EXECUTIVE COMMITTEE
+          </SectionBadge>
+        </div>{" "}
         <TeamMemberGrid
           members={EXECUTIVE_COMMITTEE}
           stickerColor="bg-stickytape-pink"
@@ -63,9 +70,15 @@ export default function MeetTheTeamPage() {
       {/* ---------------- SECTION 2: GENERAL COMITTEE ---------------- */}
       <div className="mb-10 ">
         <div className="p-10 flex flex-col items-center">
-          <div className="rounded-full border-2 border-black bg-brand-pink px-6">
-            <h3 className="font-extrabold uppercase text-2xl text-black">GENERAL COMMITTEE</h3>
-          </div>
+          <SectionBadge
+            as="h3"
+            bgColor="bg-brand-pink"
+            fontWeight="font-extrabold"
+            textSize="text-xl lg:text-2xl"
+            padding="px-6"
+          >
+            GENERAL COMMITTEE
+          </SectionBadge>
         </div>
 
         {/* SOCIAL MEDIA SECTION */}

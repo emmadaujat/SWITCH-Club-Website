@@ -1,5 +1,6 @@
 "use client";
 
+import SectionBadge from "@/components/ui/SectionBadge";
 import TiltedCard from "@/components/ui/TiltedCard";
 import { useState } from "react";
 
@@ -96,11 +97,14 @@ export default function ContactUsPage() {
         <div className="w-full md:w-auto">
           <TiltedCard rotation={0} bgColor="bg-white">
             <div className="mb-3 flex flex-col items-center">
-              <div className="rounded-full border-2 border-black bg-brand-lime px-4 py-1 items-center ">
-                <p className="font-bold uppercase text-md lg:text-lg text-black">
-                  Our Contact Details
-                </p>
-              </div>
+              <SectionBadge
+                as="p"
+                bgColor="bg-brand-lime"
+                textSize="text-md lg:text-lg"
+                padding="px-4 py-1"
+              >
+                Our Contact Details
+              </SectionBadge>
             </div>
             <ul className="list-none">
               <li className="p-1">
@@ -121,9 +125,14 @@ export default function ContactUsPage() {
         <div className="w-full md:flex-1 md:max-w-3xl">
           <TiltedCard bgColor="bg-brand-cream">
             <div className=" flex flex-col items-center">
-              <div className="rounded-full border-2 border-black bg-brand-pink px-4 py-1 items-center ">
-                <p className="font-bold uppercase text-lg lg:text-xl text-black">Got a question?</p>
-              </div>
+              <SectionBadge
+                as="p"
+                bgColor="bg-brand-pink"
+                textSize="text-lg lg:text-xl"
+                padding="px-4 py-1"
+              >
+                Got a question?{" "}
+              </SectionBadge>
             </div>
 
             <form onSubmit={handleSubmit} noValidate className="p-5 flex flex-col gap-6">

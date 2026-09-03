@@ -3,9 +3,8 @@ import ChunkyButton from "@/components/ui/ChunkyButton";
 import sponsorsData from "@/data/sponsors.json";
 import { SponsorTier, Sponsor } from "@/types/sponsors";
 import SponsorGrid from "@/components/ui/SponsorGrid";
+import SectionBadge from "@/components/ui/SectionBadge";
 
-// controls left-to-right grid position AND the podium stagger —
-// separate from `displayOrder`, which is just "rank" (used elsewhere, e.g. a pricing list)
 const podiumOrder = ["GOLD", "SILVER", "BRONZE", "OPAL"];
 
 const tierLayout: Record<string, { offsetClass: string; rotation: number }> = {
@@ -45,11 +44,14 @@ export default function SponsorshipsPage() {
             <div key={tier.id} className={layout.offsetClass}>
               <TiltedCard rotation={layout.rotation} bgColor={tier.bgColor}>
                 <div className="pl-3 mt-2 flex rotate-2">
-                  <div className="rounded-full border-2 border-black bg-white px-4 py-2 rotate-2 self-start ">
-                    <p className="font-bold uppercase text-lg lg:text-xl text-black">
-                      {tier.tierName}
-                    </p>
-                  </div>
+                  <SectionBadge
+                    bgColor="bg-white"
+                    textSize="text-lg lg:text-xl"
+                    padding="px-4 py-2"
+                    rotation="rotate-2"
+                  >
+                    {tier.tierName}
+                  </SectionBadge>
                 </div>
 
                 <div className="flex flex-row p-2 lg:p-3 items-center">
@@ -82,12 +84,17 @@ export default function SponsorshipsPage() {
       {/* CURRENT SPONSORS */}
       <div className="py-10 bg-brand-purple">
         <div className="mb-10 flex flex-row justify-center ">
-          <span className="text-brand-pink text-3xl lg:text-4xl mr-2 align-center">★</span>
-          <div className="rounded-full border-2 border-black bg-brand-lime py-2 px-5">
-            <h3 className="font-extrabold uppercase text-xl lg:text-2xl text-black">
-              Our Current Sponsors
-            </h3>
-          </div>
+          <span className="text-brand-pink text-3xl lg:text-4xl mr-2 align-middle">★</span>
+          <SectionBadge
+            bgColor="bg-brand-lime"
+            textSize="text-xl lg:text-2xl"
+            padding="py-2 px-5"
+            fontWeight="font-extrabold"
+            as="h3"
+          >
+            Our Current Sponsors
+          </SectionBadge>
+
           <span className="text-brand-pink text-3xl lg:text-4xl ml-2">★</span>
         </div>
         <SponsorGrid sponsors={sponsors} cardsPerRow={3} />

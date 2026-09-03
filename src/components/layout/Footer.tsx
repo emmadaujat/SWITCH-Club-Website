@@ -20,9 +20,9 @@ export default function Footer() {
             {/* About blurb */}
             <div>
               <h3 className="text-sm font-bold uppercase tracking-wider">
-                <span className="text-brand-pink align-center mx-1">★</span>
+                <span className="text-brand-pink align-middle mx-1">★</span>
                 SWITCH
-                <span className="text-brand-pink align-center mx-1">★</span>
+                <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
               <div className="mt-3 text-sm leading-relaxed text-brand-light">
                 <p>Society for women and gender diverse students in technology</p>
@@ -33,9 +33,9 @@ export default function Footer() {
             {/* Explore */}
             <div>
               <h3 className="text-sm font-bold uppercase tracking-wider">
-                <span className="text-brand-pink align-center mx-1">★</span>
+                <span className="text-brand-pink align-middle mx-1">★</span>
                 Explore
-                <span className="text-brand-pink align-center mx-1">★</span>
+                <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
               <ul className="mt-3 space-y-2">
                 <li>
@@ -68,8 +68,8 @@ export default function Footer() {
             {/* Get Involved */}
             <div>
               <h3 className="text-sm font-bold uppercase tracking-wider">
-                <span className="text-brand-pink align-center mx-1">★</span> Get Involved
-                <span className="text-brand-pink align-center mx-1">★</span>
+                <span className="text-brand-pink align-middle mx-1">★</span> Get Involved
+                <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
               <ul className="mt-3 space-y-2">
                 <li>
@@ -94,8 +94,8 @@ export default function Footer() {
             {/* Follow us */}
             <div>
               <h3 className="text-sm font-bold uppercase tracking-wider">
-                <span className="text-brand-pink align-center mx-1">★</span>
-                Follow us <span className="text-brand-pink align-center mx-1">★</span>
+                <span className="text-brand-pink align-middle mx-1">★</span>
+                Follow us <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
               <ul className="pt-2 pb-2 flex gap-2">
                 <li>

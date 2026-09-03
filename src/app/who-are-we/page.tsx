@@ -2,6 +2,7 @@ import Image from "next/image";
 import TiltedCard from "@/components/ui/TiltedCard";
 import ChunkyButton from "@/components/ui/ChunkyButton";
 import Sticker from "@/components/ui/Sticker";
+import SectionBadge from "@/components/ui/SectionBadge";
 
 export default function WhoWeArePage() {
   return (
@@ -30,11 +31,14 @@ export default function WhoWeArePage() {
               <div className="absolute -top-0 right-5 text-brand-lime text-4xl rotation-6">★</div>
               <div className="absolute -top-4 right-15 text-brand-pink text-2xl rotation-6">★</div>
               {/* OUR MISSION - Heading */}
-              <div className="rounded-full border-2 border-black bg-brand-pink rotate-4 p-2">
-                <h3 className="font-bold uppercase text-xl lg:text-2xl text-black">
-                  SWITCH's mission
-                </h3>
-              </div>
+              <SectionBadge
+                bgColor="bg-brand-pink"
+                textSize="text-xl lg:text-2xl"
+                rotation="rotate-4"
+                as="h3"
+              >
+                SWITCH's mission
+              </SectionBadge>
             </div>
             {/* OUR MISSION - BODY TEXT */}
             <p className="p-4 mb-10 font-semibold text-md lg:text-lg text-black">
@@ -49,9 +53,9 @@ export default function WhoWeArePage() {
       <div className=" bg-brand-purple py-10">
         {/* OUR VALUES - HEADING */}
         <div className="mb-5 flex flex-col items-center">
-          <div className="rounded-full border-2 border-black bg-brand-lime p-2">
-            <h3 className="font-bold uppercase text-xl lg:text-2xl text-black">✦ OUR VALUES ✦</h3>
-          </div>
+          <SectionBadge bgColor="bg-brand-lime" textSize="text-xl lg:text-2xl" as="h3">
+            ✦ OUR VALUES ✦{" "}
+          </SectionBadge>
         </div>
 
         {/* OUR VALUES - CARDS */}
@@ -60,7 +64,6 @@ export default function WhoWeArePage() {
             {/* CARD 1 - HEADING */}
             <div className="p-2 lg:p-4">
               <p className="mb-3 font-bold text-md lg:text-xl text-black">
-                {" "}
                 <span className="text-xl lg:text-2xl mr-1">💜</span> Inclusion
               </p>
               {/* CARD 1 - BODY TEXT */}
@@ -87,7 +90,6 @@ export default function WhoWeArePage() {
             {/* CARD 3 - HEADING */}
             <div className="p-2 lg:p-4">
               <p className="mb-3 font-bold text-md lg:text-xl text-black">
-                {" "}
                 <span className="text-xl lg:text-2xl mr-1"> ⚡</span>Empowerment
               </p>
               {/* CARD 3 - BODY TEXT */}
@@ -105,11 +107,9 @@ export default function WhoWeArePage() {
           <TiltedCard rotation={1} bgColor="bg-brand-purple">
             {/* BOTTOM SECTION: STICKY TAPE */}
             <div className="absolute -top-3 left-5 -translate-x-1">
-              {" "}
               <Sticker rotation={2} bgColor="bg-stickytape-green" />
             </div>
             <div className="absolute -top-3 right-5 -translate-x-1">
-              {" "}
               <Sticker rotation={-2} bgColor="bg-stickytape-green" />
             </div>
 
@@ -124,9 +124,9 @@ export default function WhoWeArePage() {
               </div>
 
               {/* OUR GOALS - Heading */}
-              <div className="rounded-full border-2 border-black bg-white p-2">
-                <h3 className="font-bold uppercase text-xl lg:text-2xl text-black">OUR GOALS</h3>
-              </div>
+              <SectionBadge bgColor="bg-white" textSize="text-xl lg:text-2xl" as="h3">
+                OUR GOALS{" "}
+              </SectionBadge>
             </div>
 
             {/* OUR GOALS - BODY TEXT */}
