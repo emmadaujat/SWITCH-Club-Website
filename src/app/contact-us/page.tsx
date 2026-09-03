@@ -88,7 +88,7 @@ export default function ContactUsPage() {
         <h2 className=" text-xl lg:text-2xl font-extrabold uppercase text-brand-purple">
           Got a question?
         </h2>
-        <h1 className=" text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
+        <h1 className=" text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
           Contact Us
         </h1>
       </div>

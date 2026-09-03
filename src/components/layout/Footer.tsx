@@ -19,12 +19,12 @@ export default function Footer() {
           <div className="grid flex-1 grid-cols-2 gap-8 sm:grid-cols-4">
             {/* About blurb */}
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider">
+              <h3 className="text-sm  font-bold uppercase tracking-wider">
                 <span className="text-brand-pink align-middle mx-1">★</span>
                 SWITCH
                 <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
-              <div className="mt-3 text-sm leading-relaxed text-brand-light">
+              <div className="mt-1 md:mt-4 ml-2 text-xs md:text-sm leading-relaxed text-brand-light">
                 <p>Society for women and gender diverse students in technology</p>
                 <p>@ RMIT University</p>
               </div>
@@ -37,11 +37,11 @@ export default function Footer() {
                 Explore
                 <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
-              <ul className="mt-3 space-y-2">
+              <ul className="mt-1 md:mt-2 ml-2">
                 <li>
                   <a
                     href="/who-are-we"
-                    className="text-sm text-brand-light transition hover:text-white"
+                    className=" text-xs md:text-sm text-brand-light transition hover:text-white"
                   >
                     About Us
                   </a>
@@ -49,7 +49,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="/meet-the-team"
-                    className="text-sm text-brand-light transition hover:text-white"
+                    className="text-xs md:text-sm text-brand-light transition hover:text-white"
                   >
                     Meet the Team
                   </a>
@@ -57,7 +57,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="/events"
-                    className="text-sm text-brand-light transition hover:text-white"
+                    className="text-xs md:text-sm text-brand-light transition hover:text-white"
                   >
                     Events
                   </a>
@@ -71,11 +71,11 @@ export default function Footer() {
                 <span className="text-brand-pink align-middle mx-1">★</span> Get Involved
                 <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
-              <ul className="mt-3 space-y-2">
+              <ul className="mt-1 md:mt-2 ml-2">
                 <li>
                   <a
                     href="/how-to-join"
-                    className="text-sm text-brand-light transition hover:text-white"
+                    className="text-xs md:text-sm text-brand-light transition hover:text-white"
                   >
                     Join the club
                   </a>
@@ -83,7 +83,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="/sponsorships"
-                    className="text-sm text-brand-light transition hover:text-white"
+                    className="md:mt-4 text-xs md:text-sm text-brand-light transition hover:text-white"
                   >
                     Sponsor us
                   </a>
@@ -97,7 +97,7 @@ export default function Footer() {
                 <span className="text-brand-pink align-middle mx-1">★</span>
                 Follow us <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
-              <ul className="pt-2 pb-2 flex gap-2">
+              <ul className="pt-2 flex gap-2 ml-4">
                 <li>
                   <a
                     href="https://www.linkedin.com/in/rmit-switch-admin-60b26b197/"
@@ -138,7 +138,7 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
-              <div className="pt-10">
+              <div className="pt-7 md:pt-10">
                 <p className="text-sm text-slate-400">Got a question? Send us an email!</p>
                 {/* TODO: update form to work */}
                 <form className="mt-2 sm:flex sm:max-w-md gap-x-3">

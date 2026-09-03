@@ -11,7 +11,7 @@ export default function JoinTheClubPage() {
           <span className="text-brand-pink text-xl lg:text-2xl mr-3">★</span>Become a member
           <span className="text-brand-pink text-xl lg:text-2xl ml-3">★</span>
         </h2>
-        <h1 className=" text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
+        <h1 className=" text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
           How to Join
         </h1>
         <p>Join the community to help continue to empower Women+ in tech!</p>

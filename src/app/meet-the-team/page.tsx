@@ -41,7 +41,7 @@ export default function MeetTheTeamPage() {
         <h2 className=" text-xl lg:text-2xl font-extrabold uppercase text-brand-purple">
           The people behind SWITCH
         </h2>
-        <h1 className=" text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
+        <h1 className=" text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
           Meet the team
         </h1>
         <p>The team keeping SWITCH, switched on</p>
