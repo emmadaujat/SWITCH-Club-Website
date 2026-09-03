@@ -1,21 +1,19 @@
-import Image from "next/image";
 import TiltedCard from "@/components/ui/TiltedCard";
 import ChunkyButton from "@/components/ui/ChunkyButton";
 import Sticker from "@/components/ui/Sticker";
 import eventsData from "@/data/events.json";
-import { UpcomingEvent } from "@/types/events";
+import { ClubEvent } from "@/types/events";
 import sponsorsData from "@/data/sponsors.json";
-import { SponsorTier, Sponsor } from "@/types/sponsors";
-import { TeamMember } from "@/components/ui/TeamMemberCard";
+import { Sponsor } from "@/types/sponsors";
 import Link from "next/link";
 import SponsorGrid from "@/components/ui/SponsorGrid";
+import { getUpcomingEvents } from "@/helpers/events";
+import SectionBadge from "@/components/ui/SectionBadge";
 
 export default function Home() {
-  const upcomingEvents = eventsData.upcoming as UpcomingEvent[];
-  // feature the next upcoming event (first in the array)
+  const allEvents = eventsData.events as ClubEvent[];
+  const upcomingEvents = getUpcomingEvents(allEvents);
   const featuredEvent = upcomingEvents[0];
-
-  const sponsorRotations = [3, -2, 6, -6, 4, -4];
 
   const sponsors = sponsorsData.sponsors as Sponsor[];
 
@@ -25,14 +23,12 @@ export default function Home() {
       <div className="mx-auto max-w-7xl mb-10 px-4 py-10 md:px-0 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* TOP LEFT: text + buttons */}
         <div className=" items-center text-center flex flex-col">
-          <h1 className=" text-5xl sm:text-6xl md:text-8xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:6px_black] [paint-order:stroke_fill]">
+          <h1 className=" text-6xl sm:text-5xl md:text-8xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
             SWITCH
           </h1>
 
           <div className="mt-6 rounded-lg border-2 border-black bg-white p-4 shadow-[4px_4px_0px_#000] relative max-w-sm md:max-w-none">
-            {/* sticker hidden on mobile — relies on a fixed pixel offset that only makes sense on wide screens */}
-            <div className="hidden md:block absolute -top-3 left-110 -translate-x-0">
-              {" "}
+            <div className=" md:block absolute -top-3 left-80 sm:left-100 md:left-110 -translate-x-0">
               <Sticker rotation={15} bgColor="bg-stickytape-pink" size="w-25 h-6" />
             </div>
 
@@ -52,7 +48,6 @@ export default function Home() {
 
           {/* BUTTONS */}
           <div className="mt-10 md:mt-30 flex flex-col sm:flex-row gap-6 relative w-full sm:w-auto">
-            {/* STARS — decorative, positioned relative to desktop button spacing, hide on mobile */}
             <div className="hidden md:block absolute -top-12 right-86 text-brand-purple text-4xl">
               ★
             </div>
@@ -75,7 +70,7 @@ export default function Home() {
             <p className="text-black text-lg md:text-xl font-bold"> Current Members: 350</p>
           </div>
 
-          {/* MOBILE: simple stacked polaroids, no absolute positioning */}
+          {/* MOBILE */}
           <div className="flex gap-6 overflow-x-auto px-6 py-6 md:hidden snap-x snap-mandatory">
             <div className="shrink-0 snap-center">
               <TiltedCard rotation={-4} bgColor="bg-white">
@@ -179,34 +174,33 @@ export default function Home() {
 
       {/* MIDDLE SECTION: OUR MISSION */}
       <div className=" bg-brand-purple p-6 md:p-10">
-        {/* Layout wrapper — width/centering stays here */}
+        {/* Layout wrapper */}
         <div className="relative mx-auto max-w-xl">
           <TiltedCard rotation={2} bgColor="bg-brand-cream">
-            <div className="hidden md:block absolute -top-2 left-5 -translate-x-1">
+            <div className=" md:block absolute -top-2 left-5 -translate-x-1">
               {" "}
               <Sticker rotation={6} />
             </div>
-            <div className="hidden md:block absolute -top-2 right-5 -translate-x-1">
+            <div className=" md:block absolute -top-2 right-5 -translate-x-1">
               {" "}
               <Sticker rotation={-2} />
             </div>
 
             {/* OUR MISSION - Heading with stars*/}
             <div className="p-2 mt-5 flex rotate-4 relative">
-              <div className="hidden md:block absolute -top-2 right-5 text-brand-lime text-4xl rotation-6">
+              <div className=" md:block absolute -top-2 right-5 text-brand-lime text-4xl rotation-6">
                 ★
               </div>
-              <div className="hidden md:block absolute -top-6 right-15 text-brand-pink text-2xl rotation-6">
+              <div className=" md:block absolute -top-6 right-15 text-brand-pink text-2xl rotation-6">
                 ★
               </div>
-
-              <div className="rounded-full border-2 border-black bg-brand-pink p-2">
-                <p className="font-bold uppercase text-lg md:text-xl text-black">our mission</p>
-              </div>
+              <SectionBadge bgColor="bg-brand-pink" textSize="text-lg md:text-xl">
+                our mission
+              </SectionBadge>
             </div>
 
             {/* OUR MISSION - BODY TEXT */}
-            <p className="p-2 font-bold text-base md:text-lg text-black">
+            <p className="p-2 font-semibold text-md md:text-lg text-black">
               “We're building a community where women and underrepresented people in tech can learn,
               connect, and thrive together.”
             </p>
@@ -223,55 +217,59 @@ export default function Home() {
 
       {/* BOTTOM SECTION: UPCOMING EVENT */}
       <div className=" bg-brand-purple-LIGHT p-6 md:p-10">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-3xl">
           {featuredEvent ? (
             <TiltedCard rotation={1} bgColor="bg-brand-lime">
-              <div className="hidden md:block absolute -top-4 left-1/2 -translate-x-1/2">
+              <div className=" md:block absolute -top-4 left-1/2 -translate-x-1/2">
                 {" "}
                 <Sticker rotation={1} bgColor="bg-stickytape-pink" size="w-40 h-8" />
               </div>
 
-              {/* Two-column split now lives INSIDE the card */}
-              <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+              {/* Two-column split */}
+              <div className="grid grid-cols-2 md:grid-cols-2 items-center gap-4">
                 {/* LEFT: heading + body + button, grouped together */}
                 <div className="flex flex-col">
-                  <div className="p-2 mt-5 flex rotate-4">
+                  <div className="p-2 mt-2 flex rotate-4">
                     {/* UPCOMING EVENT - Heading */}
-                    <div className="rounded-full border-2 border-black bg-white p-2 rotate-1 self-start ">
-                      <p className="font-bold uppercase text-lg md:text-xl text-black">
-                        upcoming event 🚨
-                      </p>
-                    </div>
+                    <SectionBadge
+                      bgColor="bg-white"
+                      rotation="rotate-1"
+                      textSize="text-md md:text-xl"
+                      as="p"
+                    >
+                      upcoming event 🚨
+                    </SectionBadge>
                   </div>
 
                   {/* UPCOMING EVENT - BODY TEXT */}
                   <div className="p-2">
-                    <p className="font-bold text-xl md:text-2xl ">{featuredEvent.name}</p>
-                    <p>📅 {featuredEvent.date}</p>
-                    <p> 📍 {featuredEvent.location} </p>
-                    <p className="font-semibold mt-2 text-md">
+                    <p className="pb-2 font-bold text-md md:text-2xl ">{featuredEvent.name}</p>
+                    <p className="pb-1 text-sm md:text-lg">📅 {featuredEvent.displayDate}</p>
+                    <p className="pb-1 text-sm md:text-lg"> 📍 {featuredEvent.location} </p>
+                    <p className="font-semibold mt-2 text-sm md:text-lg">
                       Come have fun with us and meet new people!
                     </p>
-                  </div>
-
-                  {/* BUTTON */}
-                  <div className=" p-2 justify-center flex">
-                    <Link href={featuredEvent.ticketUrl} target="_blank" rel="noopener noreferrer">
-                      <ChunkyButton variant="primary" trailingSymbol="→">
-                        buy a ticket now
-                      </ChunkyButton>
-                    </Link>
                   </div>
                 </div>
 
                 {/* RIGHT: photo placeholder */}
-                <div className="m-4 rounded-lg flex items-center justify-center">
+                <div className="m-4 rounded-lg flex justify-end">
                   <img
                     className="h-40 md:h-50 w-auto "
                     alt={featuredEvent.name}
                     src="/pics/events/welcome-night-sem12026.jpg"
                   />
                 </div>
+                {/* BUTTON */}
+                {featuredEvent.ticketUrl && (
+                  <div className="col-span-2 px-4 justify-end flex">
+                    <Link href={featuredEvent.ticketUrl} target="_blank" rel="noopener noreferrer">
+                      <ChunkyButton variant="primary" trailingSymbol="→">
+                        buy a ticket now
+                      </ChunkyButton>
+                    </Link>
+                  </div>
+                )}
               </div>
             </TiltedCard>
           ) : (
@@ -282,13 +280,17 @@ export default function Home() {
       {/* CURRENT SPONSORS */}
       <div className="px-4 py-10 md:px-0 bg-brand-purple">
         <div className="mb-10 flex flex-row justify-center ">
-          <span className="text-brand-pink text-4xl mr-2">★</span>
-          <div className="rounded-full border-2 border-black bg-brand-lime py-2 px-5">
-            <h3 className="font-extrabold uppercase text-xl text-black">
-              With thanks to our Sponsors
-            </h3>
-          </div>
-          <span className="text-brand-pink text-4xl ml-2">★</span>
+          <span className="text-brand-pink text-3xl lg:text-4xl mr-2">★</span>
+          <SectionBadge
+            bgColor="bg-brand-lime"
+            textSize="text-md lg:text-lg"
+            fontWeight="font-extrabold"
+            padding="py-2 px-5"
+            as="h3"
+          >
+            With thanks to our Sponsors{" "}
+          </SectionBadge>
+          <span className="text-brand-pink text-3xl lg:text-4xl ml-2">★</span>
         </div>
         <SponsorGrid sponsors={sponsors} cardsPerRow={3} />
         <div className="flex justify-center mt-10">

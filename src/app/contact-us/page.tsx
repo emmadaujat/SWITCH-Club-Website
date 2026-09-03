@@ -1,8 +1,7 @@
 "use client";
 
+import SectionBadge from "@/components/ui/SectionBadge";
 import TiltedCard from "@/components/ui/TiltedCard";
-import ChunkyButton from "@/components/ui/ChunkyButton";
-import UserForm from "@/components/ui/Form";
 import { useState } from "react";
 
 //TODO: MAKE A ROUTE FOR CONTACT FORM TO SEND TO SWITCH EMAIL
@@ -26,7 +25,6 @@ export default function ContactUsPage() {
 
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errors, setErrors] = useState<FormErrors>({});
-  const [loading, setLoading] = useState<boolean>(false);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const { name, value } = e.target;
@@ -87,32 +85,38 @@ export default function ContactUsPage() {
     <div className="bg-brand-purple-light">
       {/* ---------------- TOP SECTION ---------------- */}
       <div className=" flex flex-col items-center py-10 ">
-        <h2 className=" text-2xl font-extrabold uppercase text-brand-purple">Got a question?</h2>
-        <h1 className=" text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
+        <h2 className=" text-xl lg:text-2xl font-extrabold uppercase text-brand-purple">
+          Got a question?
+        </h2>
+        <h1 className=" text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
           Contact Us
         </h1>
       </div>
-      <div className="mx-auto max-w-6xl py-6 flex flex-col md:flex-row gap-20 mb-20 items-start justify-center">
+      <div className="mx-auto max-w-6xl py-6 p-15 flex flex-col md:flex-row gap-10 items-start justify-center">
         {/* ----------------  Contact details card ---------------- */}
         <div className="w-full md:w-auto">
           <TiltedCard rotation={0} bgColor="bg-white">
-            <div className="mb-5 flex flex-col items-center">
-              <div className="rounded-full border-2 border-black bg-brand-lime px-4 py-1 items-center ">
-                <p className="font-bold uppercase text-xl text-black">Our Contact Details</p>
-              </div>
+            <div className="mb-3 flex flex-col items-center">
+              <SectionBadge
+                as="p"
+                bgColor="bg-brand-lime"
+                textSize="text-md lg:text-lg"
+                padding="px-4 py-1"
+              >
+                Our Contact Details
+              </SectionBadge>
             </div>
-            <ul className="list-disc ">
-              <ul className="p-1">
+            <ul className="list-none">
+              <li className="p-1">
                 <span className="font-semibold">Email: </span>
                 switch@rmit.com
-              </ul>
-              <ul className="p-1">
-                {" "}
+              </li>
+              <li className="p-1">
                 <span className="font-semibold">Insta:</span> @switchrmit
-              </ul>
-              <ul className="p-1">
-                <span className="font-semibold">Linkedin: </span>@switchrmit
-              </ul>
+              </li>
+              <li className="p-1">
+                <span className="font-semibold">LinkedIn: </span>@switchrmit
+              </li>
             </ul>
           </TiltedCard>
         </div>
@@ -121,9 +125,14 @@ export default function ContactUsPage() {
         <div className="w-full md:flex-1 md:max-w-3xl">
           <TiltedCard bgColor="bg-brand-cream">
             <div className=" flex flex-col items-center">
-              <div className="rounded-full border-2 border-black bg-brand-pink px-4 py-1 items-center ">
-                <p className="font-bold uppercase text-xl text-black">Got a question?</p>
-              </div>
+              <SectionBadge
+                as="p"
+                bgColor="bg-brand-pink"
+                textSize="text-lg lg:text-xl"
+                padding="px-4 py-1"
+              >
+                Got a question?{" "}
+              </SectionBadge>
             </div>
 
             <form onSubmit={handleSubmit} noValidate className="p-5 flex flex-col gap-6">

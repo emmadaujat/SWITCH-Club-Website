@@ -1,3 +1,4 @@
+import CardGrid from "@/components/ui/CardGrid";
 import SponsorCard from "@/components/ui/SponsorCard";
 import { Sponsor } from "@/types/sponsors";
 
@@ -6,28 +7,24 @@ type SponsorGridProps = {
   cardsPerRow?: number;
 };
 
-const CARD_WIDTH_PX = 128; // matches w-32 in SponsorCard
-const GAP_PX = 32;
-
+const CARD_WIDTH_PX = 128;
 const ROTATION_SEQUENCE = [4, -4, 5, -5, 3, -3];
 
 export default function SponsorGrid({ sponsors, cardsPerRow = 4 }: SponsorGridProps) {
-  const maxWidth = cardsPerRow * CARD_WIDTH_PX + (cardsPerRow - 1) * GAP_PX;
-
   return (
-    <div
-      className="mx-auto flex flex-wrap justify-center gap-10"
-      style={{ maxWidth: `${maxWidth}px` }}
-    >
-      {sponsors.map((sponsor, index) => (
+    <CardGrid
+      items={sponsors}
+      cardWidthPx={CARD_WIDTH_PX}
+      cardsPerRow={cardsPerRow}
+      getKey={(sponsor) => sponsor.id}
+      renderCard={(sponsor, index) => (
         <SponsorCard
-          key={sponsor.id}
           companyName={sponsor.companyName}
           logoUrl={sponsor.logoUrl}
           website={sponsor.website}
           rotation={ROTATION_SEQUENCE[index % ROTATION_SEQUENCE.length]}
         />
-      ))}
-    </div>
+      )}
+    />
   );
 }

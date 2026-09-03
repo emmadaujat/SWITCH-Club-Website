@@ -11,7 +11,7 @@ export default function Footer() {
             <img
               src="/Switch-logo-verticle-light.png"
               alt="Switch Logo"
-              className="h-28 w-auto object-contain"
+              className="h-28 sm:h-24 lg:h-28 object-contain"
             />
           </div>
 
@@ -19,9 +19,10 @@ export default function Footer() {
           <div className="grid flex-1 grid-cols-2 gap-8 sm:grid-cols-4">
             {/* About blurb */}
             <div>
-              <h3 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
-                <span className="text-brand-pink">★</span> SWITCH{" "}
-                <span className="text-brand-pink">★</span>
+              <h3 className="text-sm font-bold uppercase tracking-wider">
+                <span className="text-brand-pink align-middle mx-1">★</span>
+                SWITCH
+                <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
               <div className="mt-3 text-sm leading-relaxed text-brand-light">
                 <p>Society for women and gender diverse students in technology</p>
@@ -31,9 +32,10 @@ export default function Footer() {
 
             {/* Explore */}
             <div>
-              <h3 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
-                <span className="text-brand-pink">★</span> Explore{" "}
-                <span className="text-brand-pink">★</span>
+              <h3 className="text-sm font-bold uppercase tracking-wider">
+                <span className="text-brand-pink align-middle mx-1">★</span>
+                Explore
+                <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
               <ul className="mt-3 space-y-2">
                 <li>
@@ -65,9 +67,9 @@ export default function Footer() {
 
             {/* Get Involved */}
             <div>
-              <h3 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
-                <span className="text-brand-pink">★</span> Get Involved{" "}
-                <span className="text-brand-pink">★</span>
+              <h3 className="text-sm font-bold uppercase tracking-wider">
+                <span className="text-brand-pink align-middle mx-1">★</span> Get Involved
+                <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
               <ul className="mt-3 space-y-2">
                 <li>
@@ -91,11 +93,11 @@ export default function Footer() {
 
             {/* Follow us */}
             <div>
-              <h3 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
-                <span className="text-brand-pink">★</span> Follow us{" "}
-                <span className="text-brand-pink">★</span>
+              <h3 className="text-sm font-bold uppercase tracking-wider">
+                <span className="text-brand-pink align-middle mx-1">★</span>
+                Follow us <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
-              <ul className="p-3 flex gap-2">
+              <ul className="pt-2 pb-2 flex gap-2">
                 <li>
                   <a
                     href="https://www.linkedin.com/in/rmit-switch-admin-60b26b197/"
@@ -136,15 +138,18 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
-              <p className="text-sm text-slate-400">Got questions? Send us an email!</p>
-              <form className="mt-4 sm:flex sm:max-w-md gap-x-3">
-                <input
-                  type="email"
-                  required
-                  placeholder="Enter your email"
-                  className="w-full min-w-0 rounded-md border-0 bg-white/5 px-4 py-2 text-white ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm"
-                />
-              </form>
+              <div className="pt-10">
+                <p className="text-sm text-slate-400">Got a question? Send us an email!</p>
+                {/* TODO: update form to work */}
+                <form className="mt-2 sm:flex sm:max-w-md gap-x-3">
+                  <input
+                    type="email"
+                    required
+                    placeholder="Enter your email"
+                    className="w-full min-w-0 rounded-md border-0 bg-white/5 px-4 py-2 text-white ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm"
+                  />
+                </form>
+              </div>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ type StickyTapeProps = {
 export default function Sticker({
   rotation = 0,
   bgColor = "bg-stickytape-pink",
-  size = "w-20 h-6",
+  size = "w-20 sm:w-25 h-4 sm:h-6",
 }: StickyTapeProps) {
   return (
     <div
