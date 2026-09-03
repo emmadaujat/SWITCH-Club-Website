@@ -6,8 +6,9 @@ type TeamMemberGridProps = {
   cardsPerRow?: number; // how many cards should sit on a full row (default 3)
 };
 
-// Keep these in sync with the fixed sizing used in TeamMemberCard (w-70 = 280px, gap-10 = 40px).
-const CARD_WIDTH_PX = 280;
+// Keep this in sync with the lg: width used in TeamMemberCard (currently w-80 = 320px).
+// Only approximate at the sm/base sizes, same limitation as before this update.
+const CARD_WIDTH_PX = 320;
 const GAP_PX = 40;
 
 // Small, deliberate alternation so cards don't all lean the same way —
