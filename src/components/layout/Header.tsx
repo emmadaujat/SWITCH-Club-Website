@@ -7,6 +7,14 @@ import { useState } from "react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navLinks = [
+    { href: "/who-are-we", label: "who are we" },
+    { href: "/meet-the-team", label: "meet the team" },
+    { href: "/events", label: "events" },
+    { href: "/how-to-join", label: "how to join" },
+    { href: "/sponsorships", label: "sponsorships" },
+    { href: "/contact-us", label: "contact us" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md">
@@ -22,68 +30,38 @@ export default function Header() {
           </a>
         </div>
 
-        {/* Nav Bar Links */}
+        {/* Nav Bar Links (desktop) */}
         <nav className="hidden items-center gap-8 md:flex">
-          <a
-            href="/who-are-we"
-            className="text-md font-bold text-brand-purple-dark transition-colors hover:text-brand-purple"
-          >
-            who are we
-          </a>
-          <a
-            href="/meet-the-team"
-            className="text-md font-bold text-brand-purple-dark transition-colors hover:text-brand-purple"
-          >
-            meet the team
-          </a>
-          <a
-            href="/events"
-            className="text-md font-bold text-brand-purple-dark transition-colors hover:text-brand-purple"
-          >
-            events
-          </a>
-          <a
-            href="/how-to-join"
-            className="text-md font-bold text-brand-purple-dark transition-colors hover:text-brand-purple"
-          >
-            how to join
-          </a>
-          <a
-            href="/sponsorships"
-            className="text-md font-bold text-brand-purple-dark transition-colors hover:text-brand-purple"
-          >
-            sponsorships
-          </a>
-          <a
-            href="/contact-us"
-            className="text-md font-bold text-brand-purple-dark transition-colors hover:text-brand-purple"
-          >
-            contact us
-          </a>
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-md font-bold text-brand-purple-dark transition-colors hover:text-brand-purple"
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
 
-        {/* mobile hamburger button - only shows below md */}
-        <button
-          className="md:hidden p-2 text-4xl text-brand-purple-dark"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          {menuOpen ? "✕" : "☰"}
-        </button>
-
-        {/* Social Icons as links (discord, instagram, email, rubric) */}
-        <div className="hidden items-center md:flex">
-          <div className=" justify-end flex">
-            <Link
-              href="https://campus.hellorubric.com/?s=10199"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="uppercase bg-brand-purple hover:bg-white hover:text-brand-purple text-white font-bold rounded-lg text-sm border-2 border-black p-2 shadow-[4px_4px_0px_#000] transition">
-                JOIN SWITCH <span> ★</span>
-              </button>
-            </Link>
-          </div>
+        {/* Join the club - rubric link */}
+        <div className="flex items-center gap-3">
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://campus.hellorubric.com/?s=10199"
+          >
+            <ChunkyButton variant="primary" trailingSymbol="★">
+              JOIN SWITCH
+            </ChunkyButton>
+          </Link>
+          {/* hamburger menu — only shows below md */}
+          <button
+            className="md:hidden p-2 text-4xl text-brand-purple-dark"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? "✕" : "☰"}
+          </button>
         </div>
       </div>
 
@@ -92,47 +70,20 @@ export default function Header() {
         bgColor="bg-brand-purple-dark"
         textColor="text-white"
       />
+
       {/* mobile dropdown menu */}
       {menuOpen && (
         <nav className="md:hidden flex flex-col gap-4 p-4 bg-white border-t border-gray-200 text-md font-bold text-brand-purple-dark transition-colors ">
-          <a
-            className="hover:text-brand-purple"
-            href="/who-are-we"
-            onClick={() => setMenuOpen(false)}
-          >
-            who are we
-          </a>
-          <a
-            className="hover:text-brand-purple"
-            href="/meet-the-team"
-            onClick={() => setMenuOpen(false)}
-          >
-            meet the team
-          </a>
-          <a className="hover:text-brand-purple" href="/events" onClick={() => setMenuOpen(false)}>
-            events
-          </a>
-          <a
-            className="hover:text-brand-purple"
-            href="/how-to-join"
-            onClick={() => setMenuOpen(false)}
-          >
-            how to join
-          </a>
-          <a
-            className="hover:text-brand-purple"
-            href="/sponsorships"
-            onClick={() => setMenuOpen(false)}
-          >
-            sponsorships
-          </a>
-          <a
-            className="hover:text-brand-purple"
-            href="/contact-us"
-            onClick={() => setMenuOpen(false)}
-          >
-            contact us
-          </a>
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="hover:text-brand-purple"
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
       )}
     </header>
