@@ -1,31 +1,35 @@
-import TiltedCard from "@/components/ui/TiltedCard";
-import ChunkyButton from "@/components/ui/ChunkyButton";
-import Sticker from "@/components/ui/Sticker";
 import Ticker from "@/components/ui/Ticker-meet-the-team";
-import TeamMemberCard from "@/components/ui/TeamMemberCard";
 import TeamMemberGrid from "@/components/ui/TeamMemberGrid";
 import { TeamMember } from "@/components/ui/TeamMemberCard";
 
 // ---------------- HARDCODED DATA ----------------
 const EXECUTIVE_COMMITTEE: TeamMember[] = [
-  { name: "Navya", role: "President", image: "/pics/team-bonding-sem12026.jpg", rotation: 5 },
-  { name: "Julie", role: "Vice President", image: "/pics/team-bonding-sem12026.jpg", rotation: -5 },
-  { name: "Prisha", role: "Secretary", image: "/pics/team-bonding-sem12026.jpg", rotation: 6 },
-  { name: "Emma", role: "Treasurer", image: "/pics/team-bonding-sem12026.jpg", rotation: -6 },
+  { name: "Navya", role: "President", image: "/pics/team/president.jpg", rotation: 5 },
+  { name: "Julie", role: "Vice President", image: "/pics/team/vice-president.jpg", rotation: -5 },
+  { name: "Prisha", role: "Secretary", image: "/pics/team/secretary.jpg", rotation: 6 },
+  { name: "Emma", role: "Treasurer", image: "/pics/team/treasurer.jpg", rotation: -6 },
 ];
 
 const SOCIAL_MEDIA_TEAM: TeamMember[] = [
-  { name: "Tanisha", role: "Social Media Coordinator", image: "/pics/team-bonding-sem12026.jpg" },
-  { name: "Audrey", role: "Social Media Member", image: "/pics/team-bonding-sem12026.jpg" },
-  { name: "Bao Bao", role: "Social Media Member", image: "/pics/team-bonding-sem12026.jpg" },
+  {
+    name: "Tanisha",
+    role: "Social Media Coordinator",
+    image: "/pics/team/social-media-coordinator.jpg",
+  },
+  { name: "Audrey", role: "Social Media Member", image: "/pics/team/social-media1.jpg" },
+  {
+    name: "Bao Bao",
+    role: "Social Media Member",
+    image: "/pics/team/social-media2.jpg",
+  },
 ];
 
 const EVENTS_TEAM: TeamMember[] = [
-  { name: "Dhwani", role: "Events Coordinator", image: "/pics/team-bonding-sem12026.jpg" },
-  { name: "Bianca", role: "Events Coordinator", image: "/pics/team-bonding-sem12026.jpg" },
-  { name: "Samarpita", role: "Events Member", image: "/pics/team-bonding-sem12026.jpg" },
-  { name: "Sanika", role: "Events Member", image: "/pics/team-bonding-sem12026.jpg" },
-  { name: "Samanali", role: "Events Member", image: "/pics/team-bonding-sem12026.jpg" },
+  { name: "Dhwani", role: "Events Coordinator", image: "/pics/team/events-coordinator1.jpg" },
+  { name: "Bianca", role: "Events Coordinator", image: "/pics/team/events-coordinator2.jpg" },
+  { name: "Samarpita", role: "Events Member", image: "/pics/team/events1.jpg" },
+  { name: "Sanika", role: "Events Member", image: "/pics/team/events2.jpg" },
+  { name: "Samanali", role: "Events Member", image: "pics/team/events3.jpg" },
 ];
 
 export default function MeetTheTeamPage() {
