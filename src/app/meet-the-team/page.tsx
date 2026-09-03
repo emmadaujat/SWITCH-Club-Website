@@ -43,7 +43,7 @@ export default function MeetTheTeamPage() {
       </div>
 
       {/* ---------------- SECTION 1: EXECUTIVE COMMITTEE ---------------- */}
-      <div className="bg-brand-purple px-20 pt-10 pb-20">
+      <div className="bg-brand-purple p-15">
         <div className="mb-10 flex flex-col items-center">
           <div className="rounded-full border-2 border-black bg-brand-pink px-6">
             <h3 className="font-extrabold uppercase text-2xl text-black">EXECUTIVE COMMITTEE</h3>
@@ -57,7 +57,7 @@ export default function MeetTheTeamPage() {
       </div>
 
       {/* ---------------- SECTION 2: GENERAL COMITTEE ---------------- */}
-      <div className="mb-10">
+      <div className="mb-10 ">
         <div className="p-10 flex flex-col items-center">
           <div className="rounded-full border-2 border-black bg-brand-pink px-6">
             <h3 className="font-extrabold uppercase text-2xl text-black">GENERAL COMMITTEE</h3>
@@ -67,7 +67,8 @@ export default function MeetTheTeamPage() {
         {/* SOCIAL MEDIA SECTION */}
         <Ticker phrases={["SOCIAL MEDIA"]} bgColor="bg-brand-lime" textColor="text-black" />
       </div>
-      <div className="mb-20">
+
+      <div className="mb-20 px-5">
         <TeamMemberGrid
           members={SOCIAL_MEDIA_TEAM}
           stickerColor="bg-stickytape-green"
@@ -79,7 +80,7 @@ export default function MeetTheTeamPage() {
       <div className="mb-10">
         <Ticker phrases={["EVENT MANAGEMENT"]} bgColor="bg-brand-lime" textColor="text-black" />
       </div>
-      <div className="mb-20">
+      <div className="mb-20 px-5">
         <TeamMemberGrid members={EVENTS_TEAM} stickerColor="bg-stickytape-green" cardsPerRow={3} />
       </div>
     </div>
