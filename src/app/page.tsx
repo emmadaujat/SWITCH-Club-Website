@@ -1,22 +1,19 @@
-import Image from "next/image";
 import TiltedCard from "@/components/ui/TiltedCard";
 import ChunkyButton from "@/components/ui/ChunkyButton";
 import Sticker from "@/components/ui/Sticker";
 import eventsData from "@/data/events.json";
 import { ClubEvent } from "@/types/events";
 import sponsorsData from "@/data/sponsors.json";
-import { SponsorTier, Sponsor } from "@/types/sponsors";
-import { TeamMember } from "@/components/ui/TeamMemberCard";
+import { Sponsor } from "@/types/sponsors";
 import Link from "next/link";
 import SponsorGrid from "@/components/ui/SponsorGrid";
-import { getUpcomingEvents, getPreviousEvents } from "@/helpers/events";
+import { getUpcomingEvents } from "@/helpers/events";
 
 export default function Home() {
   const allEvents = eventsData.events as ClubEvent[];
   const upcomingEvents = getUpcomingEvents(allEvents);
   const featuredEvent = upcomingEvents[0];
 
-  const sponsorRotations = [3, -2, 6, -6, 4, -4];
   const sponsors = sponsorsData.sponsors as Sponsor[];
 
   return (

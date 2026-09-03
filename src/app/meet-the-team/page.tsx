@@ -1,4 +1,4 @@
-import Ticker from "@/components/ui/Ticker-meet-the-team";
+import Ticker from "@/components/ui/Ticker";
 import TeamMemberGrid from "@/components/ui/TeamMemberGrid";
 import { TeamMember } from "@/components/ui/TeamMemberCard";
 
@@ -29,7 +29,7 @@ const EVENTS_TEAM: TeamMember[] = [
   { name: "Bianca", role: "Events Coordinator", image: "/pics/team/events-coordinator2.jpg" },
   { name: "Samarpita", role: "Events Member", image: "/pics/team/events1.jpg" },
   { name: "Sanika", role: "Events Member", image: "/pics/team/events2.jpg" },
-  { name: "Samanali", role: "Events Member", image: "pics/team/events3.jpg" },
+  { name: "Samanali", role: "Events Member", image: "/pics/team/events3.jpg" },
 ];
 
 export default function MeetTheTeamPage() {
@@ -69,7 +69,12 @@ export default function MeetTheTeamPage() {
         </div>
 
         {/* SOCIAL MEDIA SECTION */}
-        <Ticker phrases={["SOCIAL MEDIA"]} bgColor="bg-brand-lime" textColor="text-black" />
+        <Ticker
+          phrases={["SOCIAL MEDIA"]}
+          bgColor="bg-brand-lime"
+          textColor="text-black"
+          secondsPerRepeat={9}
+        />
       </div>
 
       <div className="mb-20 px-5">
@@ -82,7 +87,12 @@ export default function MeetTheTeamPage() {
 
       {/* EVENTS MANAGEMENT SECTION */}
       <div className="mb-10">
-        <Ticker phrases={["EVENT MANAGEMENT"]} bgColor="bg-brand-lime" textColor="text-black" />
+        <Ticker
+          phrases={["EVENT MANAGEMENT"]}
+          bgColor="bg-brand-lime"
+          textColor="text-black"
+          secondsPerRepeat={9}
+        />
       </div>
       <div className="mb-20 px-5">
         <TeamMemberGrid members={EVENTS_TEAM} stickerColor="bg-stickytape-green" cardsPerRow={3} />

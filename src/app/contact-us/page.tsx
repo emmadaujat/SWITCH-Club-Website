@@ -1,8 +1,6 @@
 "use client";
 
 import TiltedCard from "@/components/ui/TiltedCard";
-import ChunkyButton from "@/components/ui/ChunkyButton";
-import UserForm from "@/components/ui/Form";
 import { useState } from "react";
 
 //TODO: MAKE A ROUTE FOR CONTACT FORM TO SEND TO SWITCH EMAIL
@@ -26,7 +24,6 @@ export default function ContactUsPage() {
 
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errors, setErrors] = useState<FormErrors>({});
-  const [loading, setLoading] = useState<boolean>(false);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const { name, value } = e.target;
@@ -94,7 +91,7 @@ export default function ContactUsPage() {
           Contact Us
         </h1>
       </div>
-      <div className="mx-auto max-w-6xl py-6 p-15 flex flex-col md:flex-row gap-10 mb-20 items-start justify-center">
+      <div className="mx-auto max-w-6xl py-6 p-15 flex flex-col md:flex-row gap-10 items-start justify-center">
         {/* ----------------  Contact details card ---------------- */}
         <div className="w-full md:w-auto">
           <TiltedCard rotation={0} bgColor="bg-white">
@@ -105,18 +102,17 @@ export default function ContactUsPage() {
                 </p>
               </div>
             </div>
-            <ul className="list-disc ">
-              <ul className="p-1">
+            <ul className="list-none">
+              <li className="p-1">
                 <span className="font-semibold">Email: </span>
                 switch@rmit.com
-              </ul>
-              <ul className="p-1">
-                {" "}
+              </li>
+              <li className="p-1">
                 <span className="font-semibold">Insta:</span> @switchrmit
-              </ul>
-              <ul className="p-1">
+              </li>
+              <li className="p-1">
                 <span className="font-semibold">LinkedIn: </span>@switchrmit
-              </ul>
+              </li>
             </ul>
           </TiltedCard>
         </div>

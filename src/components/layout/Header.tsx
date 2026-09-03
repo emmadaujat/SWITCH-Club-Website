@@ -69,6 +69,7 @@ export default function Header() {
         phrases={["SAFE SPACE FOR WOMEN IN TECH", "JOIN THE MOVEMENT"]}
         bgColor="bg-brand-purple-dark"
         textColor="text-white"
+        starColors={["text-brand-pink", "text-brand-lime"]}
       />
 
       {/* mobile dropdown menu */}

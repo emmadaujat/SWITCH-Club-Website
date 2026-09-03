@@ -62,8 +62,8 @@ export default function EventsPage() {
                   <p className="font-bold text-l lg:text-xl">{event.name}</p>
                 </div>
                 <div className="px-3">
-                  <p className="font-reg text-sm lg:text-lg pt-1">📅 {event.displayDate}</p>
-                  <p className="font-reg text-sm lg:text-lg pt-1">📍 {event.location}</p>
+                  <p className="font-normal text-sm lg:text-lg pt-1">📅 {event.displayDate}</p>
+                  <p className="font-normal text-sm lg:text-lg pt-1">📍 {event.location}</p>
                 </div>
                 {event.ticketUrl && (
                   <div className="m-5 justify-start flex">

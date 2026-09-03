@@ -52,11 +52,11 @@ export default function SponsorshipsPage() {
                   </div>
                 </div>
 
-                <div className="flex flex-row p-2 lg:p-3 items-centre">
+                <div className="flex flex-row p-2 lg:p-3 items-center">
                   <p className="font-bold text-xl lg:text-2xl">{tier.price}</p>
                 </div>
 
-                <ul className="list-disc md:list-disc pl-8 font-regular text-sm lg:text-md">
+                <ul className="list-disc md:list-disc pl-8 font-normal text-sm lg:text-md">
                   {tier.benefits.map((benefit, i) => (
                     <li className="mt-2 " key={i}>
                       {benefit}
@@ -82,7 +82,7 @@ export default function SponsorshipsPage() {
       {/* CURRENT SPONSORS */}
       <div className="py-10 bg-brand-purple">
         <div className="mb-10 flex flex-row justify-center ">
-          <span className="text-brand-pink text-3xl lg:text-4xl mr-2 align-centre">★</span>
+          <span className="text-brand-pink text-3xl lg:text-4xl mr-2 align-center">★</span>
           <div className="rounded-full border-2 border-black bg-brand-lime py-2 px-5">
             <h3 className="font-extrabold uppercase text-xl lg:text-2xl text-black">
               Our Current Sponsors

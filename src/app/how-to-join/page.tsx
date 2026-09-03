@@ -26,7 +26,7 @@ export default function JoinTheClubPage() {
             </h1>
           </div>
           <h2 className="font-bold text-md lg:text-xl ">Sign up online via Rubric</h2>
-          <p className="mt-1 font-reg text-sm lg:text-md">
+          <p className="mt-1 font-normal text-sm lg:text-md">
             Fill out our quick membership form, it only takes 2 minutes!
           </p>
           {/* BUTTON */}
@@ -51,7 +51,7 @@ export default function JoinTheClubPage() {
             </h1>
           </div>
           <h2 className="font-bold text-md lg:text-xl ">Follow us on Instagram</h2>
-          <p className="mt-1 font-reg text-sm lg:text-md">
+          <p className="mt-1 font-normal text-sm lg:text-md">
             See what SWITCH have been up to and whats happening up soon!
           </p>
           {/* BUTTON */}
@@ -78,7 +78,9 @@ export default function JoinTheClubPage() {
           </div>
           {/* BODY TEXT */}
           <h2 className="font-bold text-md lg:text-xl ">Come to an event</h2>
-          <p className="mt-1 font-reg text-sm lg:text-md">Meet the team and community in person</p>
+          <p className="mt-1 font-normal text-sm lg:text-md">
+            Meet the team and community in person
+          </p>
           {/* BUTTON */}
           <div className=" mt-5 justify-end flex">
             <Link
