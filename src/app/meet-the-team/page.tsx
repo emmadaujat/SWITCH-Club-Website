@@ -4,6 +4,13 @@ import SectionBadge from "@/components/ui/SectionBadge";
 import { TeamMember } from "@/components/ui/TeamMemberCard";
 import teamData from "@/data/team.json";
 import { TeamMemberRecord } from "@/types/team";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Meet the Team",
+  description:
+    "Meet the SWITCH executive and general committee — the people behind RMIT's community for women and gender diverse students in tech.",
+};
 
 const allMembers = (teamData as TeamMemberRecord[]).sort((a, b) => a.displayOrder - b.displayOrder);
 

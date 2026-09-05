@@ -4,6 +4,13 @@ import sponsorsData from "@/data/sponsors.json";
 import { SponsorTier, Sponsor } from "@/types/sponsors";
 import SponsorGrid from "@/components/ui/SponsorGrid";
 import SectionBadge from "@/components/ui/SectionBadge";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sponsorships",
+  description:
+    "Partner with SWITCH RMIT — sponsorship packages for companies supporting women and gender diverse students in tech.",
+};
 
 const podiumOrder = ["GOLD", "SILVER", "BRONZE", "OPAL"];
 
