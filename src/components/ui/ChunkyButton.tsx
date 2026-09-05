@@ -15,7 +15,7 @@ const variantClasses = {
 };
 
 const sharedClasses =
-  "uppercase font-bold rounded-lg border-2 border-black p-2 text-xs md:text-sm shadow-[4px_4px_0px_#000] transition md:p-4";
+  "uppercase font-bold rounded-lg border-2 border-black p-2 text-[10px] md:text-sm shadow-[4px_4px_0px_#000] transition md:p-4";
 
 export default function ChunkyButton({
   variant = "primary",

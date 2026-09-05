@@ -6,30 +6,34 @@ import SectionBadge from "@/components/ui/SectionBadge";
 
 export default function WhoWeArePage() {
   return (
-    <div className=" bg-brand-light">
+    <div className=" bg-brand-purple-light">
       {/* TOP SECTION */}
       <div className="mx-auto max-w-7xl mb-10 p-10 ">
         {/* TOP SECTION: PAGE TITLE */}
-        <h2 className=" text-xl lg:text-2xl font-extrabold uppercase text-brand-purple">
+        <h2 className=" text-lg lg:text-2xl font-extrabold uppercase text-brand-purple">
           ABOUT SWITCH
         </h2>
         <h1 className=" text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
           WHO ARE WE...
         </h1>
         {/* TOP SECTION: OUR MISSION */}
-        <div className="mt-15 mx-auto max-w-3xl">
+        <div className="mt-15 mx-auto max-w-2xl">
           <TiltedCard rotation={1} bgColor="bg-brand-cream">
-            <div className="absolute -top-2 left-5 -translate-x-1">
-              <Sticker rotation={6} />
+            <div className="absolute -top-3 left-5 -translate-x-1">
+              <Sticker rotation={3} />
             </div>
             <div className="absolute -top-2 right-5 -translate-x-1">
-              <Sticker rotation={-6} />
+              <Sticker rotation={-3} />
             </div>
             {/* OUR MISSION - HEADING + STARS */}
-            <div className="p-2 mt-5 flex relative">
+            <div className="p-2 mt-4 flex relative">
               {/* STARS */}
-              <div className="absolute -top-0 right-5 text-brand-lime text-4xl rotation-6">★</div>
-              <div className="absolute -top-4 right-15 text-brand-pink text-2xl rotation-6">★</div>
+              <div className="hidden absolute -top-0 right-5 text-brand-lime text-4xl rotation-6">
+                ★
+              </div>
+              <div className="hidden absolute -top-3 right-15 text-brand-pink text-2xl rotation-6">
+                ★
+              </div>
               {/* OUR MISSION - Heading */}
               <SectionBadge
                 bgColor="bg-brand-pink"
@@ -52,22 +56,22 @@ export default function WhoWeArePage() {
       {/* MIDDLE SECTION: OUR VALUES */}
       <div className=" bg-brand-purple py-10">
         {/* OUR VALUES - HEADING */}
-        <div className="mb-5 flex flex-col items-center">
+        <div className="mb-3 lg:mb-5 flex flex-col items-center">
           <SectionBadge bgColor="bg-brand-lime" textSize="text-xl lg:text-2xl" as="h3">
             ✦ OUR VALUES ✦{" "}
           </SectionBadge>
         </div>
 
         {/* OUR VALUES - CARDS */}
-        <div className="mx-auto max-w-5xl py-4 px-10 grid grid-cols-2 lg:grid-cols-3 gap-10 ">
+        <div className="mx-auto max-w-6xl py-4 px-5 md:px-10 grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 ">
           <TiltedCard rotation={3} bgColor="bg-brand-cream">
             {/* CARD 1 - HEADING */}
-            <div className="p-2 lg:p-4">
-              <p className="mb-3 font-bold text-md lg:text-xl text-black">
-                <span className="text-xl lg:text-2xl mr-1">💜</span> Inclusion
+            <div className="p-1 lg:p-4">
+              <p className="mb-1 lg:mb-3 font-bold text-sm md:text-md lg:text-xl text-black">
+                <span className="text-lg md:text-xl lg:text-2xl lg:mr-1">💜</span> Inclusion
               </p>
               {/* CARD 1 - BODY TEXT */}
-              <p className="text-sm lg:text-md text-black">
+              <p className="text-xs md:text-sm lg:text-md text-black">
                 Everyone belongs here, regardless of background or experience.{" "}
               </p>
             </div>
@@ -75,12 +79,12 @@ export default function WhoWeArePage() {
 
           <TiltedCard rotation={-3} bgColor="bg-brand-lime">
             {/* CARD 2 - HEADING */}
-            <div className="p-2 lg:p-4">
-              <p className="mb-3 font-bold text-md lg:text-xl text-black">
-                <span className="text-xl lg:text-2xl mr-2"> 🏘️</span>Community
+            <div className="p-1 lg:p-4">
+              <p className="mb-1 lg:mb-3 font-bold text-sm md:text-md lg:text-xl text-black">
+                <span className="text-lg md:text-xl lg:text-2xl mr-1 lg:mr-2"> 🏘️</span>Community
               </p>
               {/* CARD 2 - BODY TEXT */}
-              <p className="text-sm lg:text-md text-black">
+              <p className="text-xs md:text-sm lg:text-md text-black">
                 We grow stronger by learning and supporting each other.{" "}
               </p>
             </div>
@@ -88,12 +92,12 @@ export default function WhoWeArePage() {
 
           <TiltedCard rotation={4} bgColor="bg-brand-pink">
             {/* CARD 3 - HEADING */}
-            <div className="p-2 lg:p-4">
-              <p className="mb-3 font-bold text-md lg:text-xl text-black">
-                <span className="text-xl lg:text-2xl mr-1"> ⚡</span>Empowerment
+            <div className="p-1 lg:p-4">
+              <p className="mb-1 lg:mb-3 font-bold text-sm md:text-md lg:text-xl text-black">
+                <span className="text-lg md:text-xl lg:text-2xl lg:mr-1"> ⚡</span>Empowerment
               </p>
               {/* CARD 3 - BODY TEXT */}
-              <p className="text-sm lg:text-md text-black">
+              <p className="text-xs md:text-sm lg:text-md text-black">
                 Building confidence and skills for careers in tech.{" "}
               </p>
             </div>
@@ -102,7 +106,7 @@ export default function WhoWeArePage() {
       </div>
 
       {/* BOTTOM SECTION: OUR GOALS */}
-      <div className="p-20">
+      <div className="p-10 lg:p-15">
         <div className="relative mx-auto max-w-2xl">
           <TiltedCard rotation={1} bgColor="bg-brand-purple">
             {/* BOTTOM SECTION: STICKY TAPE */}
@@ -114,7 +118,7 @@ export default function WhoWeArePage() {
             </div>
 
             {/* OUR GOALS - Heading with stars*/}
-            <div className="p-2  flex relative mb-5 flex flex-col items-center">
+            <div className="p-2 flex relative flex flex-col items-center">
               {/* OUR GOALS - stars*/}
               <div className="hidden absolute -top-0 left-55 text-brand-lime text-xl rotation-6">
                 ★
@@ -123,28 +127,30 @@ export default function WhoWeArePage() {
                 ★
               </div>
 
-              {/* OUR GOALS - Heading */}
-              <SectionBadge bgColor="bg-white" textSize="text-xl lg:text-2xl" as="h3">
-                OUR GOALS{" "}
-              </SectionBadge>
+              <div className="mb-1 lg:mb-4 flex flex-col items-center">
+                {/* OUR GOALS - Heading */}
+                <SectionBadge bgColor="bg-white" textSize="text-xl lg:text-2xl" as="h3">
+                  OUR GOALS{" "}
+                </SectionBadge>
+              </div>
             </div>
 
             {/* OUR GOALS - BODY TEXT */}
-            <div className=" px-2 lg:px-15 font-semibold text-white">
-              <p className="text-md lg:text-xl">
-                <span className="text-brand-pink text-xl lg:text-3xl mr-3 [-webkit-text-stroke:1px_black]">
+            <div className=" px-1 lg:px-10 text-white">
+              <p className="text-xs md:text-md lg:text-lg">
+                <span className="text-brand-pink text-lg md:text-xl lg:text-2xl mr-2 lg:mr-3 [-webkit-text-stroke:1px_black]">
                   ★
                 </span>
                 Continue to build a supportive community
               </p>
-              <p className="text-md lg:text-xl">
-                <span className="text-brand-pink text-xl lg:text-3xl mr-3 [-webkit-text-stroke:1px_black]">
+              <p className="text-xs md:text-md lg:text-lg ">
+                <span className="text-brand-pink text-lg md:text-xl lg:text-2xl mr-2 lg:mr-3 [-webkit-text-stroke:1px_black]">
                   ★
                 </span>
                 Fun social events, build friendships
               </p>
-              <p className="text-md lg:text-xl">
-                <span className="text-brand-pink text-xl lg:text-3xl mr-3 [-webkit-text-stroke:1px_black] ">
+              <p className="text-xs md:text-md lg:text-lg">
+                <span className="text-brand-pink text-lg md:text-xl lg:text-2xl mr-2 lg:mr-3 [-webkit-text-stroke:1px_black] ">
                   ★
                 </span>
                 Connect with industry professionals
@@ -152,7 +158,7 @@ export default function WhoWeArePage() {
             </div>
 
             {/* BUTTONS */}
-            <div className=" mt-6 justify-end flex">
+            <div className=" mt-4 justify-center flex">
               <ChunkyButton variant="other" trailingSymbol="→" href="/how-to-join">
                 JOIN THE MOVEMENT
               </ChunkyButton>
