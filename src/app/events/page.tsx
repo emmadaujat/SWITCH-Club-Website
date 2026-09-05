@@ -50,7 +50,7 @@ export default function EventsPage() {
           Previous
         </button>
       </div>
-      <div className="mx-auto max-w-7xl p-5 grid grid-cols-2 lg:grid-cols-3 gap-7">
+      <div className="mx-auto max-w-7xl p-5 lg:p-10 grid grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-12">
         {activeTab === "upcoming"
           ? upcomingEvents.map((event) => (
               <TiltedCard key={event.id} rotation={event.rotation} bgColor={event.bgColor}>
