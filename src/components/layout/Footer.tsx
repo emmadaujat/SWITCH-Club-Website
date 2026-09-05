@@ -157,7 +157,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar: Copyright & Legal */}
-        <div className=" pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className=" pt-8 flex flex-col sm:flex-row justify-between gap-4">
           <div className="text-[9px] text-slate-400">
             &copy; 2026 SWITCH — RMIT University Club. All rights reserved.
             <p className="italic">EST. 2019</p>
