@@ -27,14 +27,16 @@ export default function SponsorshipsPage() {
   return (
     <div className="bg-brand-purple-light">
       {/* ---------------- TOP SECTION ---------------- */}
-      <div className=" flex flex-col items-center py-10 pb-20">
-        <h2 className=" text-xl lg:text-2xl font-extrabold uppercase text-brand-purple">
+      <div className=" flex flex-col items-center py-8 pb-15 lg:pb-20">
+        <h2 className=" text-lg lg:text-2xl font-extrabold uppercase text-brand-purple">
           Become a Sponsor
         </h2>
-        <h1 className=" text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:4px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
+        <h1 className=" text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:3px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
           Sponsorships
         </h1>
-        <p>Contribute to a society for empowering Women+ in tech</p>
+        <p className="max-w-xs lg:max-w-3xl text-center text-xs lg:text-base text-black">
+          Contribute to a society for empowering Women+ in tech
+        </p>
       </div>
 
       <div className="mx-auto max-w-7xl px-15 mb-30 lg:p-10 grid grid-cols-1 lg:grid-cols-3 gap-5 ">
@@ -43,7 +45,7 @@ export default function SponsorshipsPage() {
           return (
             <div key={tier.id} className={layout.offsetClass}>
               <TiltedCard rotation={layout.rotation} bgColor={tier.bgColor}>
-                <div className="pl-3 mt-2 flex rotate-2">
+                <div className="pl-2 mt-2 flex rotate-2">
                   <SectionBadge
                     bgColor="bg-white"
                     textSize="text-lg lg:text-xl"
@@ -54,11 +56,11 @@ export default function SponsorshipsPage() {
                   </SectionBadge>
                 </div>
 
-                <div className="flex flex-row p-2 lg:p-3 items-center">
-                  <p className="font-bold text-xl lg:text-2xl">{tier.price}</p>
+                <div className="flex flex-row pl-2 lg:pl-3 items-center">
+                  <p className="font-bold text-lg lg:text-2xl">{tier.price}</p>
                 </div>
 
-                <ul className="list-disc md:list-disc pl-8 font-normal text-sm lg:text-md">
+                <ul className="list-disc md:list-disc pl-5 font-normal text-xs lg:text-md">
                   {tier.benefits.map((benefit, i) => (
                     <li className="mt-2 " key={i}>
                       {benefit}
@@ -82,12 +84,12 @@ export default function SponsorshipsPage() {
       </div>
 
       {/* CURRENT SPONSORS */}
-      <div className="py-10 bg-brand-purple">
-        <div className="mb-10 flex flex-row justify-center ">
-          <span className="text-brand-pink text-3xl lg:text-4xl mr-2 align-middle">★</span>
+      <div className="py-7 bg-brand-purple">
+        <div className="mb-7 flex flex-row justify-center ">
+          <span className="text-brand-pink text-2xl lg:text-4xl mr-2 align-middle">★</span>
           <SectionBadge
             bgColor="bg-brand-lime"
-            textSize="text-xl lg:text-2xl"
+            textSize="text-lg lg:text-2xl"
             padding="py-2 px-5"
             fontWeight="font-extrabold"
             as="h3"
@@ -95,7 +97,7 @@ export default function SponsorshipsPage() {
             Our Current Sponsors
           </SectionBadge>
 
-          <span className="text-brand-pink text-3xl lg:text-4xl ml-2">★</span>
+          <span className="text-brand-pink text-2xl lg:text-4xl ml-2 align-middle">★</span>
         </div>
         <SponsorGrid sponsors={sponsors} cardsPerRow={3} />
       </div>
