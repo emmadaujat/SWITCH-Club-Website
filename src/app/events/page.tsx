@@ -50,7 +50,7 @@ export default function EventsPage() {
           Previous
         </button>
       </div>
-      <div className="mx-auto max-w-7xl p-8 grid grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="mx-auto max-w-7xl p-5 grid grid-cols-2 lg:grid-cols-3 gap-7">
         {activeTab === "upcoming"
           ? upcomingEvents.map((event) => (
               <TiltedCard key={event.id} rotation={event.rotation} bgColor={event.bgColor}>
@@ -60,9 +60,9 @@ export default function EventsPage() {
                   </SectionBadge>
                 </div>
                 <div className="p-1 lg:m-2">
-                  <p className="font-bold text-xs lg:text-lg">{event.name}</p>
-                  <p className=" text-xs lg:text-base pt-1">📅 {event.displayDate}</p>
-                  <p className=" text-xs lg:text-base pt-1">📍 {event.location}</p>
+                  <p className="font-semibold text-[12px] lg:text-lg">{event.name}</p>
+                  <p className=" text-[11px] lg:text-base pt-1">📅 {event.displayDate}</p>
+                  <p className=" text-[11px] lg:text-base pt-1">📍 {event.location}</p>
                 </div>
                 {event.ticketUrl && (
                   <div className="mt-4 ml-2 justify-start flex">
@@ -82,8 +82,8 @@ export default function EventsPage() {
                   alt={event.name}
                   className="w-full h-30 lg:h-60 object-cover"
                 />
-                <p className="pt-2 lg:pt-3 font-semibold text-xs lg:text-base">{event.name}</p>
-                <p className="text-xs lg:text-sm">{event.displayDate}</p>
+                <p className="pt-2 lg:pt-3 font-semibold text-[11px] lg:text-base">{event.name}</p>
+                <p className="text-[10px] lg:text-sm">{event.displayDate}</p>
                 <div className="mt-2 lg:mt-4 justify-end flex">
                   {/* TODO: link events to instagram posts/ linkedin posts */}
                   <ChunkyButton variant="other" trailingSymbol="→" href="/how-to-join">
