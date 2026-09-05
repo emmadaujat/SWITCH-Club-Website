@@ -19,12 +19,12 @@ export default function Footer() {
           <div className="grid flex-1 grid-cols-2 gap-8 sm:grid-cols-4">
             {/* About blurb */}
             <div>
-              <h3 className="text-sm  font-bold uppercase tracking-wider">
+              <h3 className="text-xs lg:text-sm font-bold uppercase tracking-wider">
                 <span className="text-brand-pink align-middle mx-1">★</span>
                 SWITCH
                 <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
-              <div className="mt-1 md:mt-4 ml-2 text-xs md:text-sm leading-relaxed text-brand-light">
+              <div className="mt-1 md:mt-4 ml-2 text-[10px] md:text-sm leading-relaxed text-brand-light">
                 <p>Society for women and gender diverse students in technology</p>
                 <p>@ RMIT University</p>
               </div>
@@ -32,12 +32,12 @@ export default function Footer() {
 
             {/* Explore */}
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider">
+              <h3 className="text-xs lg:text-sm font-bold uppercase tracking-wider">
                 <span className="text-brand-pink align-middle mx-1">★</span>
                 Explore
                 <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
-              <ul className="mt-1 md:mt-2 ml-2">
+              <ul className=" md:mt-2 ml-2">
                 <li>
                   <a
                     href="/who-are-we"
@@ -67,11 +67,11 @@ export default function Footer() {
 
             {/* Get Involved */}
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider">
+              <h3 className="text-xs lg:text-sm font-bold uppercase tracking-wider">
                 <span className="text-brand-pink align-middle mx-1">★</span> Get Involved
                 <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
-              <ul className="mt-1 md:mt-2 ml-2">
+              <ul className="md:mt-2 ml-2">
                 <li>
                   <a
                     href="/how-to-join"
@@ -93,11 +93,11 @@ export default function Footer() {
 
             {/* Follow us */}
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider">
+              <h3 className="text-xs lg:text-sm font-bold uppercase tracking-wider">
                 <span className="text-brand-pink align-middle mx-1">★</span>
                 Follow us <span className="text-brand-pink align-middle mx-1">★</span>
               </h3>
-              <ul className="pt-2 flex gap-2 ml-4">
+              <ul className="pt-2 flex gap-2 ml-1">
                 <li>
                   <a
                     href="https://www.linkedin.com/in/rmit-switch-admin-60b26b197/"
@@ -105,7 +105,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                   >
                     <img
-                      className="h-7 w-auto object-contain"
+                      className="h-5 lg:h-7 w-auto object-contain"
                       src="/linkedin.png"
                       alt="linkedin logo link"
                     />
@@ -118,7 +118,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                   >
                     <img
-                      className="h-7 w-auto object-contain"
+                      className="h-5 lg:h-7 w-auto object-contain"
                       src="/instagram.png"
                       alt="instagram logo link"
                     />
@@ -131,22 +131,24 @@ export default function Footer() {
                     rel="noopener noreferrer"
                   >
                     <img
-                      className="h-7 w-auto object-contain"
+                      className="h-5 lg:h-7 w-auto object-contain"
                       src="/discord.png"
                       alt="discord logo link"
                     />
                   </a>
                 </li>
               </ul>
-              <div className="pt-7 md:pt-10">
-                <p className="text-sm text-slate-400">Got a question? Send us an email!</p>
+              <div className="pt-5 md:pt-10">
+                <p className="text-[11px] lg:text-xs text-slate-400">
+                  Got a question? Send us an email!
+                </p>
                 {/* TODO: update form to work */}
                 <form className="mt-2 sm:flex sm:max-w-md gap-x-3">
                   <input
                     type="email"
                     required
                     placeholder="Enter your email"
-                    className="w-full min-w-0 rounded-md border-0 bg-white/5 px-4 py-2 text-white ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm"
+                    className="text-xs w-full min-w-0 rounded-md border-0 bg-white/5 px-4 py-2 text-white ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm"
                   />
                 </form>
               </div>
@@ -156,11 +158,11 @@ export default function Footer() {
 
         {/* Bottom Bar: Copyright & Legal */}
         <div className=" pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="text-xs text-slate-400">
+          <div className="text-[9px] text-slate-400">
             &copy; 2026 SWITCH — RMIT University Club. All rights reserved.
             <p className="italic">EST. 2019</p>
           </div>
-          <div className="flex gap-x-6 text-xs text-slate-400">
+          <div className="flex gap-x-6 text-[9px] text-slate-400">
             <a href="#" className="hover:text-white transition">
               Privacy Policy
             </a>
