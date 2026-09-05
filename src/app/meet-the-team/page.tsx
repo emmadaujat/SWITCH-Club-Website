@@ -21,11 +21,11 @@ export default function MeetTheTeamPage() {
   return (
     <div className="bg-brand-purple-light pb-5 lg:pb-20">
       {/* ---------------- TOP SECTION ---------------- */}
-      <div className=" flex flex-col items-center mb-5 py-5 lg:py-10 ">
-        <h2 className=" text-xl lg:text-2xl font-extrabold uppercase text-brand-purple">
+      <div className=" flex flex-col items-center mb-5 p-4 lg:py-10 ">
+        <h2 className=" text-lg lg:text-2xl font-extrabold uppercase text-brand-purple">
           The people behind SWITCH
         </h2>
-        <h1 className=" text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:3px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
+        <h1 className=" text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase text-brand-purple [-webkit-text-stroke:3px_black] md:[-webkit-text-stroke:5px_black] [paint-order:stroke_fill]">
           Meet the team
         </h1>
         <p className="text-sm md:text-md lg:text-lg">The team keeping SWITCH, switched on</p>
