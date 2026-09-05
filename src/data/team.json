@@ -1,14 +1,14 @@
 [
-  { "id": "1", "name": "Navya", "roleTitle": "President", "committeeSection": "executive", "photoUrl": "/pics/executive1.jpg", "displayOrder": 1 },
-  { "id": "2", "name": "Julie", "roleTitle": "Vice President", "committeeSection": "executive", "photoUrl": "/pics/executive2.jpg", "displayOrder": 2 },
-  { "id": "3", "name": "Prisha", "roleTitle": "Secretary", "committeeSection": "executive", "photoUrl": "/pics/executive3.jpg", "displayOrder": 3 },
-  { "id": "4", "name": "Emma", "roleTitle": "Treasurer", "committeeSection": "executive", "photoUrl": "/pics/executive4.jpg", "displayOrder": 4 },
-  { "id": "5", "name": "Tanisha", "roleTitle": "Social Media Coordinator", "committeeSection": "social-media", "photoUrl": "/pics/social-media-1.jpg", "displayOrder": 5 },
-  { "id": "6", "name": "Audrey", "roleTitle": "Social Media Member", "committeeSection": "social-media", "photoUrl": "/pics/social-media-2.jpg", "displayOrder": 6 },
-  { "id": "7", "name": "Bao Bao", "roleTitle": "Social Media Member", "committeeSection": "social-media", "photoUrl": "/pics/social-media-3.jpg", "displayOrder": 7 },
-  { "id": "8", "name": "Dhwani", "roleTitle": "Events Coordinator", "committeeSection": "events", "photoUrl": "/pics/events1.jpg", "displayOrder": 8 },
-  { "id": "9", "name": "Bianca", "roleTitle": "Events Coordinator", "committeeSection": "events", "photoUrl": "/pics/events2.jpg", "displayOrder": 9 },
-  { "id": "10", "name": "Samarpita", "roleTitle": "Events Member", "committeeSection": "events", "photoUrl": "/pics/events3.jpg", "displayOrder": 10 },
-  { "id": "11", "name": "Sanika", "roleTitle": "Events Member", "committeeSection": "events", "photoUrl": "/pics/events4.jpg", "displayOrder": 11 },
-  { "id": "12", "name": "Samanali", "roleTitle": "Events Member", "committeeSection": "events", "photoUrl": "/pics/events5.jpg", "displayOrder": 12 }
+  { "id": "1", "name": "Navya", "roleTitle": "President", "committeeSection": "executive", "photoUrl": "/pics/team/president.jpg", "displayOrder": 1 },
+  { "id": "2", "name": "Julie", "roleTitle": "Vice President", "committeeSection": "executive", "photoUrl": "/pics/team/vice-president.jpg", "displayOrder": 2 },
+  { "id": "3", "name": "Prisha", "roleTitle": "Secretary", "committeeSection": "executive", "photoUrl": "/pics/team/secretary.jpg", "displayOrder": 3 },
+  { "id": "4", "name": "Emma", "roleTitle": "Treasurer", "committeeSection": "executive", "photoUrl": "/pics/team/treasurer.jpg", "displayOrder": 4 },
+  { "id": "5", "name": "Tanisha", "roleTitle": "Social Media Coordinator", "committeeSection": "social-media", "photoUrl": "/pics/team/social-media-1.jpg", "displayOrder": 5 },
+  { "id": "6", "name": "Audrey", "roleTitle": "Social Media ", "committeeSection": "social-media", "photoUrl": "/pics/team/social-media-2.jpg", "displayOrder": 6 },
+  { "id": "7", "name": "Bao Bao", "roleTitle": "Social Media", "committeeSection": "social-media", "photoUrl": "/pics/team/social-media-3.jpg", "displayOrder": 7 },
+  { "id": "8", "name": "Dhwani", "roleTitle": "Events Coordinator", "committeeSection": "events", "photoUrl": "/pics/team/events1.jpg", "displayOrder": 8 },
+  { "id": "9", "name": "Bianca", "roleTitle": "Events Coordinator", "committeeSection": "events", "photoUrl": "/pics/team/events2.jpg", "displayOrder": 9 },
+  { "id": "10", "name": "Samarpita", "roleTitle": "Events", "committeeSection": "events", "photoUrl": "/pics/team/events3.jpg", "displayOrder": 10 },
+  { "id": "11", "name": "Sanika", "roleTitle": "Events", "committeeSection": "events", "photoUrl": "/pics/team/events4.jpg", "displayOrder": 11 },
+  { "id": "12", "name": "Samanali", "roleTitle": "Events", "committeeSection": "events", "photoUrl": "/pics/team/events5.jpg", "displayOrder": 12 }
 ]

@@ -18,12 +18,12 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1 md:px-0">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-1 md:px-0">
         {/* Logo Section */}
         <div className="flex-shrink-0 flex items-center gap-2">
           <a href="/" className="flex items-center">
             <img
-              className="h-20 w-auto object-contain"
+              className="h-15 lg:h-20 w-auto object-contain"
               src="/Switch-logo-horizontal.png"
               alt="Switch Logo"
             />

@@ -21,23 +21,30 @@ export default function Ticker({
 
   return (
     // OUTER: clips anything outside the visible strip
-    <div className={` border-3 border-black ${bgColor} w-full overflow-hidden whitespace-nowrap`}>
+    <div
+      className={` border-2 lg:border-3 border-black ${bgColor} w-full overflow-hidden whitespace-nowrap`}
+    >
       {/* INNER: the thing that actually animates */}
       <div className="inline-flex" style={{ animation: `marquee ${duration}s linear infinite` }}>
         {/* Copy 1 - every other star is pink or lime green*/}
-        <div className="flex-shrink-0 inline-flex items-center">
+        <div className="flex-shrink-0 inline-flex items-center text-xs md:text-sm lg:text-md">
           {repeatedPhrases.map((phrase, i) => (
-            <span key={`a-${i}`} className={`${textColor} font-semibold uppercase py-4`}>
-              <span className={`p-4 ${starColors[i % starColors.length]}`}>★</span> {phrase}
+            <span key={`a-${i}`} className={`${textColor} font-semibold uppercase py-2 lg:py-4`}>
+              <span className={`p-2 md:p-3 lg:p-4 ${starColors[i % starColors.length]}`}>★</span>{" "}
+              {phrase}
             </span>
           ))}
         </div>
 
         {/* Copy 2 — every other star is pink or lime green */}
-        <div className="flex-shrink-0 inline-flex items-center" aria-hidden="true">
+        <div
+          className="flex-shrink-0 inline-flex items-center text-xs md:text-sm lg:text-md"
+          aria-hidden="true"
+        >
           {repeatedPhrases.map((phrase, i) => (
-            <span key={`b-${i}`} className={`${textColor} font-semibold uppercase py-4`}>
-              <span className={`p-4 ${starColors[i % starColors.length]}`}>★</span> {phrase}
+            <span key={`b-${i}`} className={`${textColor} font-semibold uppercase py-2 lg:py-4`}>
+              <span className={`p-2 md:p-3 lg:p-4 ${starColors[i % starColors.length]}`}>★</span>{" "}
+              {phrase}
             </span>
           ))}
         </div>
