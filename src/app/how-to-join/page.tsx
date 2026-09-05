@@ -1,6 +1,12 @@
 import TiltedCard from "@/components/ui/TiltedCard";
 import ChunkyButton from "@/components/ui/ChunkyButton";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "How to Join",
+  description: "Join SWITCH at RMIT — sign up online, follow us on Instagram, or come to an event.",
+};
 
 export default function JoinTheClubPage() {
   return (

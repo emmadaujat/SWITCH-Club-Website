@@ -1,8 +1,14 @@
-import Image from "next/image";
 import TiltedCard from "@/components/ui/TiltedCard";
 import ChunkyButton from "@/components/ui/ChunkyButton";
 import Sticker from "@/components/ui/Sticker";
 import SectionBadge from "@/components/ui/SectionBadge";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Who Are We",
+  description:
+    "Learn about SWITCH's mission, values, and goals — a community empowering women and gender diverse students in tech at RMIT.",
+};
 
 export default function WhoWeArePage() {
   return (
