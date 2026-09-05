@@ -84,7 +84,7 @@ export default function ContactUsPage() {
   return (
     <div className="bg-brand-purple-light">
       {/* ---------------- TOP SECTION ---------------- */}
-      <div className=" flex flex-col items-center p-5 ">
+      <div className=" flex flex-col items-center py-8 pb-7 lg:pb-10 ">
         <h2 className=" text-lg lg:text-2xl font-extrabold uppercase text-brand-purple">
           Got a question?
         </h2>

@@ -60,7 +60,7 @@ export default function SponsorshipsPage() {
                   <p className="font-bold text-lg lg:text-2xl">{tier.price}</p>
                 </div>
 
-                <ul className="list-disc md:list-disc pl-5 font-normal text-xs lg:text-md">
+                <ul className="list-disc md:list-disc pl-5 lg:pl-7 font-normal text-xs lg:text-sm">
                   {tier.benefits.map((benefit, i) => (
                     <li className="mt-2 " key={i}>
                       {benefit}
