@@ -29,7 +29,11 @@ export default function Home() {
 
           <div className="mt-4 rounded-lg border-2 border-black bg-white p-2 md:p-3 lg:p-4 shadow-[4px_4px_0px_#000] relative max-w-sm md:max-w-none">
             <div className=" md:block absolute -top-2 left-80 sm:left-100 md:left-110 -translate-x-0">
-              <Sticker rotation={15} bgColor="bg-stickytape-pink" size="w-13 h-4 lg:w-25 lg:h-6" />
+              <Sticker
+                rotation={15}
+                bgColor="bg-stickytape-pink"
+                size="w-13 h-4 md:w-20 md:h-5 lg:w-25 lg:h-6"
+              />
             </div>
 
             <p className="font-medium text-xs md:text-sm lg:text-md text-brand-purple-dark">
@@ -225,13 +229,13 @@ export default function Home() {
             <TiltedCard rotation={1} bgColor="bg-brand-lime">
               <div className=" md:block absolute -top-4 left-1/2 -translate-x-1/2">
                 {" "}
-                <Sticker rotation={1} bgColor="bg-stickytape-pink" size="w-40 h-8" />
+                <Sticker rotation={1} bgColor="bg-stickytape-pink" size="w-40 lg:w-50 h-6 lg:h-8" />
               </div>
 
               {/* Two-column split */}
               {/* LEFT: heading + body + button, grouped together */}
               <div className="flex flex-col">
-                <div className="p-1 md:p-4 mt-2 flex rotate-4">
+                <div className="p-1 md:p-4 mt-2 lg:mt-4 flex rotate-4">
                   {/* UPCOMING EVENT - Heading */}
                   <SectionBadge
                     bgColor="bg-white"
@@ -242,7 +246,7 @@ export default function Home() {
                     upcoming event 🚨
                   </SectionBadge>
                 </div>{" "}
-                <div className="mb-5 lg:mb-5 mx-2 mt-2 lg:m-4 lg:mt-2 rounded-lg flex">
+                <div className="mb-4 lg:mb-5 mx-2 mt-2 lg:m-4 lg:mt-2 rounded-lg flex">
                   {" "}
                   {/* LEFT: photo placeholder */}
                   <img
@@ -251,7 +255,7 @@ export default function Home() {
                     src="/pics/events/welcome-night-sem12026.jpg"
                   />
                   {/* UPCOMING EVENT - BODY TEXT */}
-                  <div className="p-2">
+                  <div className="m-1">
                     <p className="pb-2 font-bold text-sm md:text-md lg:text-lg ">
                       {featuredEvent.name}
                     </p>
