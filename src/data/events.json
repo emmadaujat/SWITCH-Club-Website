@@ -8,7 +8,7 @@
       "location": "The Promonade, Docklands",
       "bgColor": "bg-brand-lime",
       "rotation": 3,
-      "ticketUrl": "https://rubric.rmit.edu.au/switch",
+      "ticketUrl": "https://campus.hellorubric.com/?eid=76590",
       "displayDate": "22 Oct 2026"
     },
     {
@@ -19,7 +19,7 @@
       "location": "RMIT Building 14",
       "bgColor": "bg-brand-pink",
       "rotation": -3,
-      "ticketUrl": "https://rubric.rmit.edu.au/switch/",
+      "ticketUrl": "https://campus.hellorubric.com/?s=10199",
       "displayDate": "3 Oct 2026"
     },
     {
@@ -30,7 +30,7 @@
       "location": "RMIT Garden Building Lvl 6",
       "bgColor": "bg-brand-cream",
       "rotation": 4,
-      "ticketUrl": "https://rubric.rmit.edu.au/switch/panel-night",
+      "ticketUrl": "https://campus.hellorubric.com/?eid=76247",
       "displayDate": "7 Sep 2026"
     },
     {
